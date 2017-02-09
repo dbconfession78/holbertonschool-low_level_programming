@@ -13,5 +13,5 @@ int main(void)
 
 	fwrite(str, sizeof(*str), strlen(str), stdout);
 
-	return (0);
+	return (1);
 }

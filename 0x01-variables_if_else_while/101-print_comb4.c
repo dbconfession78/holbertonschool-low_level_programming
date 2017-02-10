@@ -7,54 +7,32 @@
  */
 int main(void)
 {
+	int c2, c3, d2, d3, i, j, k;
 
-	int c1;
-	int c2;
-	int c3;
-	int d1;
-	int d2;
-	int d3;
-	int i;
-	int j;
-	int k;
-
-	d2 = 1;
-	d3 = 2;
-
-	c2 = d2;
-	c3 = d3;
-
+	d2 = c3 = j = 1;
+	d3 = c3 = k = 2;
 	i = 0;
-	j = c2;
-	k = c3;
-
-	while (i < 10)
+	for (i = 0; i < 10; i++)
 	{
-		while (j < 10)
+		for ( ; j < 10; j++)
 		{
-			while(k < 10)
+			for ( ; k < 10; k++)
 			{
 				putchar(i + '0');
 				putchar(j + '0');
 				putchar(k + '0');
-
 				if (i != 7)
 				{
 					putchar(',');
 					putchar(' ');
 				}
-				k++;
 			}
-			k = c3+1;
+			k = c3 + 1;
 			c3 = k;
-			j++;
 		}
-		i++;
 		d2++;
-		d3++;
-		c2 = d2;
-		c3 = d3;
-		j = c2;
+		d3++; c2 = d2;
+		c3 = d3; j = c2;
 		k = d3;
 	}
 	putchar('\n');

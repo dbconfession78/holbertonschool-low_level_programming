@@ -2,15 +2,15 @@
 
 /**
  * add - adds two integers
- * @a: first of two ints to be added together
- * @b: second of two ints to be added together
+ * @a: first int
+ * @b: second int
  *
- * Return: result of n1 + n2
+ * Return: return a + b
  */
 
 int add(int a, int b)
 {
-	unsigned int sum;
+	int sum;
 
 	sum = a + b;
 

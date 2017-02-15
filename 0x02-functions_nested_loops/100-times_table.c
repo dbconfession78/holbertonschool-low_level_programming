@@ -2,7 +2,9 @@
 /**
  *print_times_table - prints variable times table
  *@n: multiplication factor for table
- */
+ *
+ * Return: none
+*/
 void print_times_table(int n)
 {
 	int i, j, result, m1, m2, m3;

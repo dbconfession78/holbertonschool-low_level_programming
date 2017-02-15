@@ -11,7 +11,8 @@ void print_times_table(int n)
 	{
 		int i, j, result, m1, m2, m3;
 
-		for (i = 0; i <= n ; i++)
+		i = 0;
+		while (i <= n)
 		{
 			_putchar('0');
 			for (j = 1; j <= n; j++)
@@ -43,6 +44,7 @@ void print_times_table(int n)
 				}
 			}
 			_putchar('\n');
+			i++;
 		}
 	}
 }

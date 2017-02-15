@@ -1,38 +1,45 @@
-#include <stdio.h>
+#include "holberton.h"
 /**
  *print_times_table - prints variable times table
  *@n: multiplication factor for table
  */
 void print_times_table(int n)
 {
-	int i, j, result;
+	int i, j, result, m1, m2, m3;
 
 	if (n > 15 || n < 0)
 		return;
 
 	for (i = 0; i <= n ; i++)
 	{
-		for (j = 0; j <= n; j++)
+		_putchar('0');
+		for (j = 1; j <= n; j++)
 		{
 			result = i * j;
-			if (j != 0)
-				printf(", ");
-
-			if (result < 10  &&  result != 0)
+			m1 = result / 100;
+			m2 = result / 10 % 10;
+			m3 = result % 10;
+			_putchar(',');
+			_putchar(' ');
+			if (result < 10)
 			{
-				printf("  ");
-
-			} else if (result >= 10 && result < 100)
-			{
-				printf(" ");
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(m3 +  '0');
 			}
-
-			if (i == 0 && j > 0)
+			else if (result >= 100)
 			{
-				printf("  ");
+				_putchar(m1 + '0');
+				_putchar(m2 + '0');
+				_putchar(m3 + '0');
 			}
-			printf("%d", result);
+			else
+			{
+				_putchar(' ');
+				_putchar(m2 + '0');
+				_putchar(m3 + '0');
+			}
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }

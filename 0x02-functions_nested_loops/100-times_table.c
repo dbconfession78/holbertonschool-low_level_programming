@@ -7,10 +7,9 @@
 */
 void print_times_table(int n)
 {
-	int i, j, result, m1, m2, m3;
-
 	if (n < 16 && n > -1)
 	{
+		int i, j, result, m1, m2, m3;
 
 		for (i = 0; i <= n ; i++)
 		{

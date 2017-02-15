@@ -14,7 +14,7 @@ int main(void)
 
 	a = 1;
 	b = 2;
-	sum = 0;
+	sum = 2;
 
 	for (i = 3; c <= 4000000; i++)
 	{

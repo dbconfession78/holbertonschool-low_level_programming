@@ -8,31 +8,28 @@
 
 int main(void)
 {
-	unsigned long i;
+	int i;
 	unsigned long a, b, c;
-	int sum;
 
 	a = 1;
 	b = 2;
-	sum = 0;
 
-	for (i = 3; c <= 4000000; i++)
+	printf("%lu, ", a);
+	printf("%lu, ", b);
+
+	for (i = 3; i <= 50; i++)
 	{
 		c = a + b;
-		if (c > 4000000)
+		printf("%lu", c);
+		if (i != 50)
 		{
-			break;
-		}
-
-		if (c % 2 == 0)
-		{
-			sum = sum + c;
+			printf(", ");
 		}
 
 		a = b;
 		b = c;
 	}
-	printf("%d\n", sum);
+	printf("\n");
 
 	return (0);
 }

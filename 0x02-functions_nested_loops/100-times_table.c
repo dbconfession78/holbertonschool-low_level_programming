@@ -24,17 +24,17 @@ void print_times_table(int n)
 
 				_putchar(',');
 				_putchar(' ');
-				if (result < 10)
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(m3 +  '0');
-				}
-				else if (result >= 100)
+				if (result > 99)
 				{
 					_putchar(m1 + '0');
 					_putchar(m2 + '0');
 					_putchar(m3 + '0');
+				}
+				else if (result < 10)
+				{
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(m3 +  '0');
 				}
 				else
 				{

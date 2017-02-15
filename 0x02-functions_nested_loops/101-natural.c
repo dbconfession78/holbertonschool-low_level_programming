@@ -17,6 +17,10 @@ int main(void)
 		if (i % 3 == 0 || i % 5 == 0)
 		{
 			sum = sum + i;
+			if (sum > 1023)
+			{
+				break;
+			}
 		}
 	}
 	printf("%d\n", sum);

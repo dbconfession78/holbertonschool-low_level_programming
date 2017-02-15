@@ -9,7 +9,8 @@
 int main(void)
 {
 	int i;
-	long unsigned a, b, c;
+	unsigned long a, b, c;
+
 	a = 1;
 	b = 2;
 
@@ -25,7 +26,8 @@ int main(void)
 			printf(", ");
 		}
 
-		a = c;
+		a = b;
+		b = c;
 	}
 	printf("\n");
 

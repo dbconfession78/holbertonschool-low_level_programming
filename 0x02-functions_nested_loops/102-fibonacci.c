@@ -8,18 +8,18 @@
 
 int main(void)
 {
-	int a, b, c, i;
-
+	int i;
+	long unsigned a, b, c;
 	a = 1;
 	b = 2;
 
-	printf("%d, ", a);
-	printf("%d, ", b);
+	printf("%lu, ", a);
+	printf("%lu, ", b);
 
 	for (i = 3; i <= 50; i++)
 	{
 		c = a + b;
-		printf("%d", c);
+		printf("%lu", c);
 		if (i != 50)
 		{
 			printf(", ");

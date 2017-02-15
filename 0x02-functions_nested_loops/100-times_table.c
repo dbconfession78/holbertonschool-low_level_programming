@@ -15,7 +15,8 @@ void print_times_table(int n)
 		while (i <= n)
 		{
 			_putchar('0');
-			for (j = 1; j <= n; j++)
+			j = 0;
+			while (j <= n)
 			{
 				result = i * j;
 				m1 = result / 100;
@@ -42,6 +43,7 @@ void print_times_table(int n)
 					_putchar(m2 + '0');
 					_putchar(m3 + '0');
 				}
+				j++;
 			}
 			_putchar('\n');
 			i++;

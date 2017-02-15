@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- *print_times_table - prints variable times table
- *@n: multiplication factor for table
+ * print_times_table - prints variable times table
+ * @n: multiplication factor for table
  *
  * Return: none
 */
@@ -19,10 +19,7 @@ void print_times_table(int n)
 			while (j <= n)
 			{
 				result = i * j;
-				m1 = result / 100;
-				m2 = result / 10 % 10;
-				m3 = result % 10;
-
+				m1 = result / 100, m2 = result / 10 % 10, m3 = result % 10;
 				_putchar(',');
 				_putchar(' ');
 				if (result > 99)

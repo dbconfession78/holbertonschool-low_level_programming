@@ -10,20 +10,14 @@
 int main(void)
 {
 	int i;
+	int sum;
 
 	for (i = 0; i < 1024; i++)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
-			printf("%d", i);
-			if (i != 1023)
-			{
-				printf(", ");
-			}
-			else
-			{
-				printf("\n");
-			}
+			sum = sum + i;
 		}
 	}
+	printf("%d\n", sum);
 }

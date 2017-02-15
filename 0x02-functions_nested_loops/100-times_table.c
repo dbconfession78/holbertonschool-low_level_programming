@@ -1,49 +1,50 @@
 #include "holberton.h"
+
 /**
- * print_times_table - prints variable times table
- * @n: multiplication factor for table
+ * print_times_table - prints nx times table
+ * @n: value of how large the times table should be
  *
- * Return: none
-*/
+ * Return: void
+ */
 void print_times_table(int n)
 {
 	if (n < 16 && n > -1)
 	{
-		int i, j, result, m1, m2, m3;
+		int column, row, sum, h, t, o;
 
-		i = 0;
-		while (i <= n)
+		column = 0;
+		while (column <= n)
 		{
 			_putchar('0');
-			j = 0;
-			while (j <= n)
+			row = 1;
+			while (row <= n)
 			{
-				result = i * j;
-				m1 = result / 100, m2 = result / 10 % 10, m3 = result % 10;
+				sum = column * row;
+				h = sum / 100, t = sum / 10 % 10, o = sum % 10;
 				_putchar(',');
 				_putchar(' ');
-				if (result > 99)
+				if (sum > 99)
 				{
-					_putchar(m1 + '0');
-					_putchar(m2 + '0');
-					_putchar(m3 + '0');
+					_putchar(h + '0');
+					_putchar(t + '0');
+					_putchar(o + '0');
 				}
-				else if (result < 10)
+				else if (sum < 10)
 				{
 					_putchar(' ');
 					_putchar(' ');
-					_putchar(m3 +  '0');
+					_putchar(o + '0');
 				}
 				else
 				{
 					_putchar(' ');
-					_putchar(m2 + '0');
-					_putchar(m3 + '0');
+					_putchar(t + '0');
+					_putchar(o + '0');
 				}
-				j++;
+				row++;
 			}
 			_putchar('\n');
-			i++;
+			column++;
 		}
 	}
 }

@@ -11,7 +11,7 @@
 
 void print_number(int n)
 {
-	unsigned int x, i;
+	int x, i;
 
 	i = 1;
 	if (n < 0)

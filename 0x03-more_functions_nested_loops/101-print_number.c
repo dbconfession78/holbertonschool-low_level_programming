@@ -21,7 +21,12 @@ void print_number(int n)
 	}
 
 	for ( ; i * 10 <= n; i = i * 10)
-	{}
+	{
+		if (i ==  1000000000)
+		{
+			break;
+		}
+	}
 
 	for ( ; i > 1 ; i = i / 10)
 	{

@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * print_number - prints integers
@@ -11,28 +10,38 @@
 
 void print_number(int n)
 {
-	int x, i;
+	int c, i, x, mult10;
 
-	i = 1;
+	mult10 = 10;
+	c = 0;
 	if (n < 0)
 	{
-		n = n * -1;
 		_putchar('-');
+		n *= -1;
 	}
 
-	for ( ; i * 10 <= n; i = i * 10)
+	x = n;
+	if (n < 10)
 	{
-		if (i ==  1000000000)
-		{
-			break;
-		}
+		_putchar(n + '0');
+		return;
 	}
 
-	for ( ; i > 1 ; i = i / 10)
+	for  ( ; x > 0; c++)
 	{
-		x = n / i;
-		_putchar(x + '0');
-		n = n - x * i;
+		x /= 10;
 	}
-	_putchar(n + '0');
+
+	for (i = 1; i < c - 1; i++)
+	{
+		mult10 *= 10;
+	}
+
+	_putchar((n / mult10) + '0'); /* first digit */
+	for (i = 1; i < c; i++)
+	{
+		mult10 /= 10;
+		x = n / mult10;
+		_putchar((x % 10) + '0');
+	}
 }

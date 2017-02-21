@@ -1,5 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <string.h>
+
 /**
  * rev_string - prints a string forwrd and backward
  *
@@ -11,7 +13,7 @@
 void rev_string(char *s)
 {
 	int i, j, len;
-	char s2[100];
+	char s2[strlen(s)];
 
 
 	i = j = len = 0;

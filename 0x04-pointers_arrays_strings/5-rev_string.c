@@ -11,7 +11,7 @@
 void rev_string(char *s)
 {
 	int i, j, len;
-	char s2[64];
+	char s2[100];
 
 
 	i = j = len = 0;
@@ -36,10 +36,10 @@ void rev_string(char *s)
 	}
 }
 
-int main(void)
+/*int main(void)
 {
 	char s[100] = "hghghghghghghghghghghghghghghghghghghghghghghghghghg";
 	rev_string(s);
 	printf("%s\n", s);
 	return (0);
-}
+}*/

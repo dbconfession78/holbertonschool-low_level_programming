@@ -15,7 +15,7 @@ void print_rev(char *s)
 	len = 0;
 	while (*(s + i) != 0)
 	{
-		if (s[i] != 0)
+		if (*(s + i) != 0)
 		{
 			len++;
 			i++;

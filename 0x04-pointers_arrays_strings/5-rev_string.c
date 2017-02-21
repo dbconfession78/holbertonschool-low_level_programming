@@ -18,8 +18,7 @@ void rev_string(char *s)
 	while (s[i] != 0)
 	{
 		if (s[i] != 0)
-		{
-
+		{;
 			i++;
 		}
 	}
@@ -34,5 +33,23 @@ void rev_string(char *s)
 		s[i] = s2[j];
 		j++;
 	}
+	s[len] = '\0';
+}
 
+/**
+ * _strlen - count the length of a string
+ *  @s: char pointer
+ *
+ * Return: integer
+ */
+int _strlen(char *s)
+{
+	int i, count;
+
+	count = 0;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		count++;
+	}
+	return (i);
 }

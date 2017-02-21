@@ -10,20 +10,27 @@
 
 void rev_string(char *s)
 {
-	int len = 0, c;
+	int i, j, len;
+	char s2[20];
 
-	char copy[sizeof(s) + 1];
-
-
-
-	/* make a copy and get length*/
-	for (c = 0; s[c] != 0; c++, len++)
+	i = j = len = 0;
+	while (s[i] != 0)
 	{
-		copy[c] = s[c];
+		if (s[i] != 0)
+		{
+			len++;
+			i++;
+		}
 	}
 
-	for (c = 0, len--; len >= 0; len--, c++)
+	for (i = 0; i < len; i++)
 	{
-		s[c] = copy[len];
+		s2[i] = s[i];
+	}
+
+	for (i = len - 1; i >= 0; i--)
+	{
+		s[i] = s2[j];
+		j++;
 	}
 }

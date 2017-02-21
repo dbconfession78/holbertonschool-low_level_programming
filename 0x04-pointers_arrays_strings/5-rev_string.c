@@ -34,12 +34,4 @@ void rev_string(char *s)
 		s[i] = s2[j];
 		j++;
 	}
-}
-
-/*int main(void)
-{
-	char s[100] = "hghghghghghghghghghghghghghghghghghghghghghghghghghg";
-	rev_string(s);
-	printf("%s\n", s);
-	return (0);
-}*/
+}/

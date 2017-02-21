@@ -3,7 +3,7 @@
 /**
  * _strlen - returns the length of a string
  *
- *@a: character array to count
+ *@s: character array to count
  *
  * Return: number of characters
  */

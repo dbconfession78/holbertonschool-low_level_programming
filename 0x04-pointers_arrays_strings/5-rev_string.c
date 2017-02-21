@@ -27,11 +27,12 @@ void rev_string(char *s)
 	{
 		s2[i] = s[i];
 	}
-	s2[len + 1] = '\0';
+	s2[9] = '\0';
 
 	for (i = len - 1; i >= 0; i--)
 	{
 		s[i] = s2[j];
 		j++;
 	}
+	s[9] = '\0';
 }

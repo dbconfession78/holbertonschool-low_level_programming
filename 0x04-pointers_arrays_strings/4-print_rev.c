@@ -10,17 +10,19 @@
 
 void print_rev(char *s)
 {
-	int i;
+	int i, len;
 
-	i = 0;
+	i = len = 0;
 	while (*(s + i) != 0)
 	{
 		if (*(s + i) != 0)
 		{
+			len++;
 			i++;
 		}
 	}
-	for (i-- ; i >= 0; i--)
+	len = i - 1;
+	for (i = len ; i >= 0; i--)
 	{
 		_putchar(*(s + i));
 	}

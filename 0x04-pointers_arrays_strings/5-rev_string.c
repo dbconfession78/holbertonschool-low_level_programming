@@ -34,4 +34,4 @@ void rev_string(char *s)
 		s[i] = s2[j];
 		j++;
 	}
-}/
+}

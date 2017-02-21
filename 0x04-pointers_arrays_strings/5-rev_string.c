@@ -29,7 +29,6 @@ void rev_string(char *s)
 	{
 		s2[i] = s[i];
 	}
-	
 
 	for (i = len - 1; i >= 0; i--)
 	{

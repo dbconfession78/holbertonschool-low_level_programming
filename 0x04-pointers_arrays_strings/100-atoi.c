@@ -54,7 +54,7 @@ int _atoi(char *s)
 }
 
 /**
- * _atoi - checks the sign of a number in a char string
+ * check_sign - checks the sign of a number in a char string
  *
  *@str: string to check
  *
@@ -97,7 +97,7 @@ int check_sign(char *str)
 			}
 		}
 	}
-	return multiplier;
+	return (multiplier);
 }
 
 /**

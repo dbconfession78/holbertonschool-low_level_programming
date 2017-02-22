@@ -65,7 +65,6 @@ int check_sign(char *str)
 {
 	int i, multiplier, len;
 
-
 	multiplier = 1;
 	len = _strlen(str);
 	for (i = 0; i < len; i++)
@@ -110,14 +109,12 @@ int check_sign(char *str)
 
 int _strlen(char *s)
 {
-	int i, c;
+	int i;
 
 	i = 0;
-	c = -1;
-	while (c != 0)
+	while (s[i] != 0)
 	{
-		c = s[i];
-		if (c != 0)
+		if (s[i] != 0)
 		{
 			i++;
 		}

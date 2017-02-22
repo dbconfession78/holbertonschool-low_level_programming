@@ -1,50 +1,44 @@
-#include <stdio.h>
-#include <string.h>
 #include "holberton.h"
-
+#include <stdio.h>
 /**
- * _atoi - converts a string to an integer
+ * _atoi - returns integer values from string
+ * @s: input string
  *
- *@s: string to convert to int
- *
- * Return: string as an int
+ * Return: will return integer
  */
-
 int _atoi(char *s)
 {
-	int i, j, len, d, mult10, multiplier;
-	char x[_strlen(s)];
+	int result = 0, nth = 1, c = 0, digits = 0, start = 0, sign = 0;
 
-	d = j = 0;
-	multiplier = check_sign(s);
-	len = _strlen(s);
-	x[len] = '\0';
-	if (s[0] == 0)
-		return (0);
-	/* copy numeric chars into new strings */
-	for (i = 0; i < len; i++)
+	while (s[c] != 0)
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[c] == '-' || s[c] == '+')
+			s[c] == '+' ? sign++ : sign--;
+		if (s[c] > 47 && s[c] < 58)
 		{
-			x[j] = s[i];
-			j++;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
+			start += c;
+			while (s[c] > 47 && s[c] < 58 && s[c] != 0)
+				digits++, c++;
+			break;
 		}
+		c++;
 	}
-	x[j] = '\0';
-	mult10 = 1;
-	for (i = 1; i < _strlen(x); i++)
+	if (digits > 0)
 	{
-		mult10 *= 10;
+		c--;
+		for (digits -= 1; digits > 0; digits--)
+			nth *= 10;
+		while (start <= c)
+		{
+			if (sign >= 0)
+				result += (s[start] - 48) * nth;
+			else
+				result -= (s[start] - 48) * nth;
+			nth /= 10;
+			start++;
+		}
+		return (result);
 	}
-	/* convert the string to int */
-	for (i = 0; i < len; i++)
-	{
-		d = d + ((int) x[i] - 48) * mult10;
-		mult10 /= 10;
-	}
-	/* set sign */
-	d *= multiplier;
-	return (d);
+	else
+		return (0);
 }

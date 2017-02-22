@@ -13,22 +13,19 @@
 int _atoi(char *s)
 {
 	int result, sign, i, x, num_count, mult10;
+
 	result = 0, i = 0, sign = 0, x = 0, num_count = 0, mult10 = 1;
 
 	while (s[i] != '\0')
 	{
 		if (s[i] == '-' || s[i] == '+')
-		{
 			s[i] == '+' ? sign++ : sign--;
-		}
-
 		if (s[i] >= 48  && s[i] <= 57)
 		{
 			x = x + i;
 			while (s[i] >= 48 && s[i] <= 57 && s[i] != '\0')
 			{
-				num_count++;
-				i++;
+				num_count++; i++;
 			}
 			break;
 		}
@@ -47,11 +44,11 @@ int _atoi(char *s)
 			{
 				result += (s[x] - 48) * mult10;
 			}
-			else {
+			else
+			{
 				result -= (s[x] - 48) * mult10;
 			}
-			mult10 /= 10;
-			x++;
+			mult10 /= 10; x++;
 		}
 	}
 	return (result);

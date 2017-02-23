@@ -3,11 +3,11 @@
 #include "holberton.h"
 
 /**
+ * _atoi - converts a string with numbers into an int
  *
+ *@s: string to convert
  *
- *
- *
- * Return:
+ * Return: int converted fro string
  */
 
 int _atoi(char *s)

@@ -14,18 +14,23 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	char *ret = dest;
-	int i =0;
 
 	while (*dest) /* same as: while (dest[0] !- '\0') */
 	{
 		dest++; /* w. each loop, array is shifted left until it's empty */
 	}
+
 	while (n != 0)
 	{
-		 if (!(*dest++ = *src++))
-			return ret;
+		char temp1 = *src++;
+		char temp2 = (*dest++ = temp1);
 
-		i++;
+		if (!temp2)
+			return (ret);
+
+/*		if (!(*dest++ = *src++))
+ *		return ret;
+*/
 		n--;
 	}
 	*dest = 0;

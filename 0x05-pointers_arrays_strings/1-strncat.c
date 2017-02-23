@@ -13,7 +13,7 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0;
-	char end[n + 1];
+	char end[n];
 
 	for (i = 0; i < n; i++)
 		end[i] = src[i];

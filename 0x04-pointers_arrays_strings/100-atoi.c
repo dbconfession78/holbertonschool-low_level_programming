@@ -1,55 +1,80 @@
-#include "holberton.h"
 #include <stdio.h>
-
+#include <string.h>
+#include "holberton.h"
 
 /**
- * _atoi - converts a string to an integer
  *
- *@s: string to convert to int
  *
- * Return: string as an int
+ *
+ *
+ * Return:
  */
 
 int _atoi(char *s)
 {
-	int result, sign, i, x, num_count, mult10;
+	int i;
+	int result;
+	int neg_count;
 
-	result = 0, i = 0, sign = 0, x = 0, num_count = 0, mult10 = 1;
-
-	while (s[i] != '\0')
+	result = neg_count = 0;
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '-' || s[i] == '+')
-			s[i] == '+' ? sign++ : sign--;
-		if (s[i] >= 48  && s[i] <= 57)
+		if (s[i] == '-')
 		{
-			x = x + i;
-			while (s[i] >= 48 && s[i] <= 57 && s[i] != '\0')
+			neg_count++;
+		}
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			for ( ; s[i] >= '0' && s[i] <= '9'; i++)
 			{
-				num_count++; i++;
+				result = result * 10 - (s[i] - '0');
 			}
 			break;
 		}
-		i++;
 	}
-	if (num_count > 0)
+	if (neg_count % 2 == 0)
 	{
-		i = i - 1;
-		for (num_count = num_count - 1; num_count > 0; num_count--)
-		{
-			mult10 *= 10;
-		}
-		while (x <= i)
-		{
-			if (sign >= 0)
-			{
-				result += (s[x] - 48) * mult10;
-			}
-			else
-			{
-				result -= (s[x] - 48) * mult10;
-			}
-			mult10 /= 10; x++;
-		}
+		result *= -1;
+	}
+	else
+	{
+		result *= 1;
 	}
 	return (result);
 }
+
+/*int main(void)
+{
+	int n;
+
+	n = _atoi("asdfass><><><.,.,.,.lajsfas]]ew[w[]we[j");
+	  printf("%d\n", n);
+	n = _atoi("-2147483648");
+	printf("%d\n", n);
+	n = _atoi("2147483647");
+    printf("%d\n", n);
+
+
+	n = _atoi("98");
+	printf("%d\n", n);
+	n = _atoi("-402");
+	printf("%d\n", n);
+	n = _atoi("          ------++++++-----+++++--98");
+	printf("%d\n", n);
+	n = _atoi("214748364");
+    printf("%d\n", n);
+	n = _atoi("0");
+	printf("%d\n", n);
+	n = _atoi("Suite 402");
+	printf("%d\n", n);
+	n = _atoi("         +      +    -    -98 Battery Street; San Fr\
+      ancisco, CA 94111 - USA             ");
+	printf("%d\n", n);
+	n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
+	printf("%d\n", n);
+
+
+
+	return (0);
+
+	} */

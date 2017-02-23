@@ -12,34 +12,13 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i = 0;
-	char end[n];
+	char *ret = dest;
 
-	for (i = 0; i < n; i++)
-		end[i] = src[i];
-	end[i] = '\0';
-	_strcat(dest, end);
-	return (dest);
-}
-
-/**
- * _strcat - concatenates two strings together
- *
- * @dest: src gets appended to this
- * @src: gets appended to dest
- *
- * Return: concatenated character array
- */
-
-char *_strcat(char *dest, char *src)
-{
-	int i = 0, j = 0;
-
-	while (dest[i] != '\0')
-		i++;
-	for (j = 0; src[j] != '\0'; j++)
-		dest[i + j] = src[j];
-
-	dest[i + j] = '\0';
-	return (dest);
+	while (*dest)
+		dest++;
+	while (n--)
+		if (!(*dest++ = *src++))
+			return ret;
+	*dest = 0;
+	return (ret);
 }

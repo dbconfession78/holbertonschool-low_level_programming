@@ -24,7 +24,7 @@ char *_strncat(char *dest, char *src, int n)
 	while (n != 0)
 	{
 		temp1 = *src;
-		src += 11;
+		src += 1;
 		temp2 = (*dest = temp1);
 		dest += 1
 		if (!temp2)

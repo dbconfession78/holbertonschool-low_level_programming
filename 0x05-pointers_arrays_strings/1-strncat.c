@@ -10,16 +10,25 @@
  *
  * Return: concatenated string
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
 	char *ret = dest;
+	int i =0;
 
-
-	while (*dest)
-		dest++;
-	while (n--)
-		if (!(*dest++ = *src++))
+	while (*dest) /* same as: while (dest[0] !- '\0') */
+	{
+		dest++; /* w. each loop, array is shifted left until it's empty */
+	}
+	while (n != 0)
+	{
+		 if (!(*dest++ = *src++))
 			return ret;
+
+		i++;
+		n--;
+	}
+	*dest = 0;
 
 	return (ret);
 }

@@ -11,31 +11,29 @@
 
 char *cap_string(char *s)
 {
-	int i;
+	int i = 0;
+	int j, k;
+	char spacers[] = " \t\n,;.!?\"(){}";
 
-	printf("%c\n", s[0]);
-	s[0] = char_to_upper(s[0]);
-
-	for (i = 1; i < _strlen(s); i++)
+	if (s[i] >= 'a' && s[i] <= 'z')
 	{
-		while (is_letter(s[i]) != 1)
-		{
-			i++;
-		}
-
-		if (s[i] == _strlen(s))
-		{
-			break;
-		}
-
-		if (is_word_start(s[i], s[i - 1]) == 1)
-		{
-			s[i] = char_to_upper(s[i]);
-		}
+		s[i] = s[i] - 'a' + 'A';
+		i++;
 	}
+		for (j = 0; spacers[j] != '\0'; j++)
+		{
+			for (k = i; s[k] != '\0'; k++)
+			{
+				if (s[k] == spacers[j])
+					if (s[k + 1] >= 'a' && s[k + 1] <= 'z')
+					{
+						s[k + 1] = s[k + 1] - 'a' + 'A';
+					}
+			}
+		}
 	return (s);
 }
-/* space, tabulation, new line, ,, ;, ., !, ?, ", (, ), {, and } */
+
 
 /**
  * is_letter - checks if char is alpha

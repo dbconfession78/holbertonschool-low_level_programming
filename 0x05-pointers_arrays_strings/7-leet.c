@@ -14,7 +14,7 @@ char *leet(char *s)
 	char alpha[11] = "aeotlAEOTL";
 	char nums[11] = "4307143071";
 
-	for (i = 0; i < _strlen(s) ; i++)
+	for (i = 0; s[i] != '\0' ; i++)
 	{
 		for (j = 0; j < _strlen(alpha); j++)
 		{

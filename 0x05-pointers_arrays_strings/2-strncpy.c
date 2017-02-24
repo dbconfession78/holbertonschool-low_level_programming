@@ -24,13 +24,4 @@ char *_strncpy(char *dest, char *src, int n)
 			i++;
 		}
 		return (dest);
-/*	char *ret = dest;
- *	do {
- *		if (!n--)
- *			return (ret);
- *	} while (*dest++ = *src++);
- *	while (n--)
- *		*dest++ = 0;
- *		return (ret);
-*/
 }

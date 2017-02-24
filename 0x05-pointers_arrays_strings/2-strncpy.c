@@ -1,27 +1,20 @@
-#include "holberton.h"
+#include <stdio.h>
 
 /**
- * _strncpy - copies a string into an empty character array
  *
- * @dest: empty character array that src is copied into
- * @src: copied into dest
- * @n: number of src characters to copy into dest
  *
- * Return: new copy
+ *
+ *
+ * Return:
  */
+
 
 char *_strncpy(char *dest, char *src, int n)
 {
-		int i;
+	int i;
 
-		for (i = 0; i < n && src[i] != '\0'; i++)
-		{
-			dest[i] = src[i];
-		}
-		while (i < n)
-		{
-			dest[i] = '\0';
-			i++;
-		}
-		return (dest);
+	for (i = 0; i < _strlen(dest) && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
 }

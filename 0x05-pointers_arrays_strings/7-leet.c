@@ -1,25 +1,31 @@
 #include "holberton.h"
 
 /**
- * leet - function that encodes a string into l337
+ * leet - encrypts a string with leet
  *
  * @s: string to encrypt
  *
- * Return: l337 encrypted string
+ * Return: encrypted string
  */
 
 char *leet(char *s)
 {
-	int i = 0, j;
-	char nums[] = "4433007711";
-	char alpha[] = "AaEeOoTtLl";
+	int i, j;
+	char alpha[11] = "aeotlAEOTL";
+	char nums[11] = "4307143071";
 
-	for ( ; s[i] != 0; i++)
+	for (i = 0; i < _strlen(s); i++)
 	{
-		j = 0;
-		for (j = 0; alpha[j] != 0; j++)
+		for (j = 0; j < _strlen(alpha); j++)
+		{
 			if (s[i] == alpha[j])
+			{
 				s[i] = nums[j];
+				break;
+			}
+		}
 	}
+	s[i] = '\0';
+
 	return (s);
 }

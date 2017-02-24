@@ -19,3 +19,8 @@ char *rot13(char *);
 void print_number(int n);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
 void print_buffer(char *b, int size);
+int is_letter(char c);
+int is_lower(char c);
+char char_to_upper(char c);
+int is_word_start(char c, char cp);
+int is_spacer(char c);

@@ -10,8 +10,9 @@
 
 char *leet(char *s)
 {
-
 	int i, j;
+	char *alpha = "aeotlAEOTL";
+	char *nums = "4307143071";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{

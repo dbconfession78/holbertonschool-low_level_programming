@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <limits.h>
-#include <stdio.h>
 
 /**
  *  print_number - prints an integer
@@ -16,6 +14,12 @@ void print_number(int n)
 
 	mult10 = 1;
 	len = last = 0;
+
+	if (n == 0)
+	{
+		_putchar(0 + '0');
+		return;
+	}
 	if (n < 0)
 	{
 		_putchar('-');

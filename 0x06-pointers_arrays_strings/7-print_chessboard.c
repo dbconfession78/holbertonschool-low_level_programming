@@ -11,25 +11,14 @@
 
 void print_chessboard(char (*a)[8])
 {
-	/*int i, j;
-	int size = sizeof(a);
-
-	for (i = 0; i < size; i++)
-	{
-		for (j = 0; j < size; j++)
-		{
-			_putchar(a[i][j]);
-		}
-		printf("\n");
-		}*/
-	int j = 1;
+	int i = 1;
 
 	while (a[0][j - 1] != 0)
 	{
-		_putchar(a[0][j - 1]);
-		if (j > 1 && j % 8 == 0)
+		_putchar(a[0][i - 1]);
+		if (i > 1 && i % 8 == 0)
 			_putchar('\n');
-		j++;
+		i++;
 	}
 
 }

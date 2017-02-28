@@ -10,7 +10,7 @@
  * Return: pointer to the first occurance of c in s; NULL if not found
  */
 
-char *strchr(const char *s, int c)
+char *_strchr(char *s, int c)
 {
     while (*s != (char)c)
         if (!*s++)

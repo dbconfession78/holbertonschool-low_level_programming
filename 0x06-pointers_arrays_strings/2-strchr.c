@@ -14,6 +14,7 @@ char *_strchr(char *s, char c)
 {
 	int i;
 	int len = _strlen(s)
+
 	for (i = 0; i < len; i++)
 	{
 		if (s[i] == c)

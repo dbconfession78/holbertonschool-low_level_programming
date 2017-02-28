@@ -10,10 +10,15 @@
  * Return: pointer to the first occurance of c in s; NULL if not found
  */
 
-char *_strchr(char *s, int c)
+char *_strchr(char *s, char c)
 {
-    while (*s != (char)c)
-        if (!*s++)
-            return 0;
-    return (char *)s;
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == c)
+			return (++s);
+		s++;
+	}
+	return (NULL);
 }

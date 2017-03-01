@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include "holberton.h"
+
+/**
+ * _print_rev_recursion - prints a string in reverse
+ *
+ *@s: string to print
+ *
+ * Return: void
+ */
+
+void _print_rev_recursion(char *s)
+{
+	int len;
+
+	*(s + 2);
+
+
+
+	printf("%s\n", s);
+	getchar();
+
+	if (s == "" || s== "\0")
+		return;
+
+		len = _strlen(s);
+		_putchar(s[len]);
+		*s--;
+		_print_rev_recursion(s);
+}
+
+int main(void)
+{
+    _print_rev_recursion("\nColton Walker");
+    return (0);
+}

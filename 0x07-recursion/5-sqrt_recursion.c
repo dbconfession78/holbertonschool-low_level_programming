@@ -14,10 +14,9 @@ int _sqrt_recursion(int n)
 	return (my_sqrt(n, 1));
 }
 
-
 /**
  * my_sqrt - checks if square root exists
- * 
+ *
  * @n: number to check
  * @mult: incrementally squared to match with n
  *

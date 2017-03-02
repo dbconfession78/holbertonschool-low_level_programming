@@ -29,9 +29,9 @@ int my_sqrt(int n, int mult)
 
 	if (square > n)
 		return (-1);
-	if (square != n)
-		return (my_sqrt(n, mult + 1));
-	else
+	if (square == n)
 		return (mult);
+	else
+		return (my_sqrt(n, mult + 1));
 
 }

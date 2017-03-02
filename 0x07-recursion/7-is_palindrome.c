@@ -17,7 +17,7 @@ int is_palindrome(char *s)
 /**
  * my_is_palindrome - helper function to check for palindrome
  *
- * @s; string to check for palindrome
+ * @s: string to check for palindrome
  * @len: length of string
  *
  *Return: 1 if palindrome; 0 otherwise

@@ -31,6 +31,5 @@ int my_is_prime_number(int n, int i)
 		return (1);
 	if (n % i == 0)
 		return (0);
-	else
-		return (my_is_prime_number(n, i + 1));
+	return (my_is_prime_number(n, i + 1));
 }

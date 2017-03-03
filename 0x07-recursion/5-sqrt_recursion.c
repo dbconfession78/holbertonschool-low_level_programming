@@ -18,20 +18,18 @@ int _sqrt_recursion(int n)
  * my_sqrt - checks if square root exists
  *
  * @n: number to check
- * @mult: incrementally squared to match with n
+ * @i: incrementally squared to match with n
  *
  * Return: square root if found; -1 if not found
  */
 
-int my_sqrt(int n, int mult)
+int my_sqrt(int n, int i)
 {
-	int square = mult * mult;
 
-	if (square > n)
+	if (n <= 0 || i > n)
 		return (-1);
-	if (square == n)
-		return (mult);
-	else
-		return (my_sqrt(n, mult + 1));
+	if (i * i == n)
+		return (i);
+	return (my_sqrt(n, i + 1));
 
 }

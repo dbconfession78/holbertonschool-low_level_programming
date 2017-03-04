@@ -8,6 +8,7 @@
  * Return: void
  */
 
+
 void print_number(int n)
 {
 	int i, x, len, mult10,  last;
@@ -30,7 +31,6 @@ void print_number(int n)
 		x /= 10;
 		if (x != 0)
 			mult10 *= 10;
-
 		len++;
 	}
 	x = n / mult10;

@@ -24,6 +24,7 @@ int is_lower(char c);
 char char_to_upper(char c);
 int is_word_start(char c, char cp);
 int is_spacer(char c);
+
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
 int _strlen_recursion(char *s);

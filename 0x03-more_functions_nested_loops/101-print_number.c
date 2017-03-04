@@ -26,11 +26,6 @@ void print_number(int n)
 		n *= -1;
 	}
 	x = n;
-	if (n < 10)
-	{
-		_putchar(n + '0');
-		return;
-	}
 	for  ( ; x > 0; c++)
 	{
 		x /= 10;
@@ -47,7 +42,5 @@ void print_number(int n)
 		_putchar((x % 10) + '0');
 	}
 	if (last_digit != 0)
-	{
 		_putchar(last_digit + '0');
-	}
 }

@@ -1,9 +1,25 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
-#include <limits.h>
-#include <string.h>
 
+
+/**
+ * _strlen - returns the lenght of a string
+ * @s: pointer to s
+ *
+ * Return: 0 on success
+ *
+ */
+int _strlen(char *s)
+{
+	int count = 0;
+
+	if (s != '\0')
+	{
+		while (*(s + count) != '\0')
+			count++;
+	}
+	return (count);
+}
 
 /**
  * _strdup - returns a pointer to a newly allocated space in mem
@@ -17,7 +33,7 @@
 char *_strdup(char *str)
 {
 	unsigned int i;
-	int len = strlen(str);
+	int len = _strlen(str);
 	char *p_str = malloc(len * sizeof(char));
 
 	for (i = 0; str[i] != '\0'; i++)

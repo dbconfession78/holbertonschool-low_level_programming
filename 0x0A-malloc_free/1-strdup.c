@@ -16,18 +16,9 @@
 
 char *_strdup(char *str)
 {
-	unsigned int i;
-	char *str2 = malloc((strlen(str) * sizeof(char)));
-	char *p_str2 = &str2[0];
+	char *p_str = malloc(56);
 
-	if (str == NULL)
-		return (NULL);
-
-/*	strcpy(str2, str); */
-	for (i = 0; i < strlen(str); i++)
-	{
-		str2[i] = str[i];
-	}
-
-	return (p_str2);
+	strcpy(p_str, str);
+	p_str[strlen(str)] = 0;
+	return (p_str);
 }

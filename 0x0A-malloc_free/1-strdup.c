@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "holberton.h"
+#include <string.h>
 
 
 /**
@@ -32,8 +33,8 @@ int _strlen(char *s)
 
 char *_strdup(char *str)
 {
-	unsigned int i;
-	int len = _strlen(str);
+
+	int len = _strlen(str) + 1;
 	char *p_str;
 
 	if (str == NULL)
@@ -41,10 +42,7 @@ char *_strdup(char *str)
 
 	p_str = malloc(len * sizeof(char));
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		p_str[i] = str[i];
-	}
+	strcpy(p_str, str);
 
 	return (p_str);
 }

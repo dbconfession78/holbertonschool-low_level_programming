@@ -32,18 +32,16 @@ int _strlen(char *s)
 
 char *_strdup(char *str)
 {
-	unsigned int i;
-	int len = _strlen(str);
-	char *p_str = malloc(len * sizeof(char));
+	int i;
+	char *new_str;
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		p_str[i] = str[i];
-	}
-	p_str[i] = 0;
-
-	if (i == 0)
+	if (str == NULL)
 		return (NULL);
-
-	return (p_str);
+	new_str = malloc(sizeof(char) * (_strlen(str) + 1));
+	if (new_str == NULL)
+		return (NULL);
+	for (i = 0; str[i] != '\0'; i++)
+		new_str[i] = str[i];
+	new_str[i] = '\0';
+	return (new_str);
 }

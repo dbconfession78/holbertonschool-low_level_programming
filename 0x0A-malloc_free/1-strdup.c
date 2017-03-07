@@ -20,5 +20,8 @@ char *_strdup(char *str)
 
 	strcpy(p_str, str);
 	p_str[strlen(str)] = 0;
+	if (p_str == NULL)
+		return (NULL);
+
 	return (p_str);
 }

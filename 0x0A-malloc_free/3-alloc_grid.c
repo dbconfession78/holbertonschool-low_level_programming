@@ -33,26 +33,33 @@ int _strlen(char *s)
 
 int **alloc_grid(int width, int height)
 {
-	int i, j, k;
+	int i, j;
 	int **grid;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	grid = malloc(height * sizeof(int *));
+
+	grid = malloc(height * sizeof(int));
 	if (grid == NULL)
 		return (NULL);
-	for (i = 0; i < height; i++)
+
+	for (i = 0; i < width; i++)
 	{
 		grid[i] = malloc(width * sizeof(int));
 		if (grid[i] == NULL)
 		{
-			for (j = i - 1; j >= 0; j--)
-				free(grid[j]);
+		    for(j = 0; j < width; j++)
+			{
+				free(grid[i]);
+			}
 			free(grid);
 			return (NULL);
 		}
-		for (k = 0; k < width; k++)
-			grid[i][k] = 0;
+		for (j = 0; j < width; j++)
+		{
+			grid[i][j] = 0;
+		}
 	}
 	return (grid);
+
 }

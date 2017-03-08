@@ -1,41 +1,30 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "holberton.h"
-
+#include <stdlib.h>
 /**
- * _strlen - returns the length of a string
+ * _strlen - returns the lenght of a string
+ * @s: pointer to s
  *
- *@s: character array to count
+ * Return: 0 on success
  *
- * Return: number of characters
  */
-
 int _strlen(char *s)
 {
-	int i, c;
+	int count = 0;
 
-	i = 0;
-	c = -1;
-	while (c != 0)
+	if (s != '\0')
 	{
-		c = s[i];
-		if (c != 0)
-		{
-			i++;
-		}
+		while (*(s + count) != '\0')
+			count++;
 	}
-	return (i);
+	return (count);
 }
-
 /**
- * argstostr - concatenates all arguments passed to function
+ * argstostr - concatenates all the arguments of your program
+ * @ac: number of args
+ * @av: arguments
  *
- * @ac: argument count
- * @av: argument vectors
- *
- * Return: concatenated string
+ * Return: pointer to new string
  */
-
 char *argstostr(int ac, char **av)
 {
 	int i, j, k, len, total_len;

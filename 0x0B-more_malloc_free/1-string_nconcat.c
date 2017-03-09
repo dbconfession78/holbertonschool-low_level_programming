@@ -3,25 +3,6 @@
 #include "holberton.h"
 
 /**
- * _strlen - returns the lenght of a string
- * @s: pointer to s
- *
- * Return: 0 on success
- *
- */
-int _strlen(char *s)
-{
-	int count = 0;
-
-	if (s != '\0')
-	{
-		while (*(s + count) != '\0')
-			count++;
-	}
-	return (count);
-}
-
-/**
  * string_nconcat - concatenates two strings
  *
  * @s1: string to append to
@@ -32,42 +13,26 @@ int _strlen(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j = 0;
-	char *s3;
-	unsigned int tot_len;
-	unsigned int len1 = 0;
-	unsigned int len2 = 0;
+	unsigned int i, j, len1 = 0, len2 = 0;
+	char *new_str;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-
-	for (i = 0; s1[i] != '\0'; i++)
+	while (*(s1 + len1) != '\0')
 		len1++;
-	for (i = 0; i < n; i++)
+	while (*(s2 + len2) != '\0')
 		len2++;
-
 	if (n >= len2)
 		n = len2;
-
-	if (len1 == 0 && n == 0)
+	new_str = malloc(sizeof(char) * (len1 + n + 1));
+	if (new_str == NULL)
 		return (NULL);
-
-	tot_len = len1 + n + 1;
-	s3 = malloc(sizeof(char) * tot_len);
-
-	if (s3 == NULL)
-		return (NULL);
-
 	for (i = 0; i < len1; i++)
-		s3[i] = s1[i];
-
-	for (j = 0; j < n; j++, i++)
-		s3[i] = s2[j];
-
-	s3[i] = '\0';
-
-	return (s3);
-
+		new_str[i] = s1[i];
+	for (j = 0; j < n; i++, j++)
+		new_str[i] = s2[j];
+	new_str[i] = '\0';
+	return (new_str);
 }

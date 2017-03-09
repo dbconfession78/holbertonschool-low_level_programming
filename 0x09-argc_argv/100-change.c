@@ -1,4 +1,14 @@
 #include <stdio.h>
+<<<<<<< HEAD
+
+/**
+ * main - entry point
+ *
+ * @argc: argument count
+ * @argv: arguments passed to program
+ *
+ * Return: always returns 0
+=======
 #include <stdlib.h>
 #include "holberton.h"
 
@@ -9,10 +19,15 @@
  * @argv: arguments passted to program through main
  *
  * Return:always returns 0
+>>>>>>> ce509d5d5884a9e5bbe3ceb078cc2ae656cdf5da
  */
 
 int main(int argc, char *argv[])
 {
+<<<<<<< HEAD
+	return (0);
+}
+=======
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -64,3 +79,4 @@ int make_change(int cents)
 	}
 	return (q + d + n + tcp + p);
 }
+>>>>>>> ce509d5d5884a9e5bbe3ceb078cc2ae656cdf5da

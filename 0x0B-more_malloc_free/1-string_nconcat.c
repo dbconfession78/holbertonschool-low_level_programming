@@ -51,8 +51,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  *	for ( ; *(s2 + len2) != '\0'; len2++)
  *	;
 */
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
+	len1 = _strlen(s1) + 1;
+	len2 = _strlen(s2) + 1;
 	if (n >= len2)
 		n = len2;
 	tot_len = len1 + n + 1;

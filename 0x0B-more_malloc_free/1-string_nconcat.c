@@ -3,6 +3,32 @@
 #include "holberton.h"
 
 /**
+ * _strlen - returns the length of a string
+ *
+ *@s: character array to count
+ *
+ * Return: number of characters
+ */
+
+int _strlen(char *s)
+{
+	int i, c;
+
+	i = 0;
+	c = -1;
+	while (c != 0)
+	{
+		c = s[i];
+		if (c != 0)
+		{
+			i++;
+		}
+	}
+	return (i);
+}
+
+
+/**
  * string_nconcat - concatenates two strings
  *
  * @s1: string to append to
@@ -20,10 +46,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	for ( ; *(s1 + len1) != '\0'; len1++)
-		;
-	for ( ; *(s2 + len2) != '\0'; len2++)
-		;
+/*	for ( ; *(s1 + len1) != '\0'; len1++)
+ *		;
+ *	for ( ; *(s2 + len2) != '\0'; len2++)
+ *	;
+*/
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
 	if (n >= len2)
 		n = len2;
 	tot_len = len1 + n + 1;

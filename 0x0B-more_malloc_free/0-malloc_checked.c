@@ -13,12 +13,12 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *c = malloc(sizeof(unsigned int *) * b);
+	void *c = malloc(b);
 
-	if (c == NULL)
+	if (malloc(b))
 	{
-		exit(98);
+		return (malloc(b));
 	}
 
-	return (c);
+	exit(98);
 }

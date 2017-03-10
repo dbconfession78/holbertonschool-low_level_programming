@@ -26,10 +26,10 @@ int *array_range(int min, int max)
 	else
 	{
 		array = malloc(sizeof(int) * (range + 1));
-		if (array == NULL)
+		if (!array)
 			return (NULL);
-		for (i = 0; i <= max; i++)
-			array[i] = min++;
+		for (i = 0; i <= max; i++, min++)
+			array[i] = min;
 	}
 	return (array);
 }

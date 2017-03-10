@@ -3,28 +3,6 @@
 #include "holberton.h"
 
 /**
- * _memcpy - copies memory area
- *
- * @dest: location to copy to
- * @src: location to copy from
- * @n: number of bytes to copy
- *
- * Return: memory filled array
- */
-
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int i;
-
-	for (i = 0; i < sizeof(dest) && i < sizeof(src); i++)
-	{
-		dest[i] = src[i];
-	}
-
-	return (dest);
-}
-
-/**
  * _realloc - reallocates a memory block using malloc
  * @ptr: current pointer
  * @old_size: size of current pointer

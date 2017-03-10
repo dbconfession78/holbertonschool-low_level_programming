@@ -21,12 +21,12 @@ int *array_range(int min, int max)
 	if (range == 0)
 	{
 		array = malloc(sizeof(int));
-		array[0] = min;
+		*array = min;
 	}
 	else
 	{
 		array = malloc(sizeof(int) * (range + 1));
-		if (!array)
+		if (array == NULL)
 			return (NULL);
 		for (i = 0; i <= max; i++)
 			array[i] = min++;

@@ -23,7 +23,6 @@ int *array_range(int min, int max)
 	array = malloc(sizeof(int) * range + 1);
 	if (!array)
 		return (NULL);
-	printf("min: %d\nmax: %d\nrange: %d\n", min, max, range);
 	for (i = 0; i <= range; i++)
 		array[i] = min++;
 

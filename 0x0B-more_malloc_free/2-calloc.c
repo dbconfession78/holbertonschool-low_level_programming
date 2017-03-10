@@ -5,8 +5,8 @@
 /**
  * _calloc - allocate memory for an array using malloc
  *
- * @nmemb: rows in arrow
- * @size: cols in array
+ * @nmemb: number of elements
+ * @size: byte size of each element
  *
  * Return: void
  */
@@ -26,6 +26,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; *(array + 1); i++)
 		array[i] = 0;
 
+	array[i] = '\0';
 	return (array);
 
 }

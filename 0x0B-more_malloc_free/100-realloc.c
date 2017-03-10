@@ -35,11 +35,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (!new_ptr)
 		return (NULL);
 
-/*	if (new_size < old_size)
- *		old_size = new_size;
- */
-
-/*	_memcpy(new_ptr, ptr, old_size); */
 	for (i = 0; i < old_size && i < new_size; i++)
 		new_ptr[i] = ((char *)ptr)[i];
 	free(ptr);

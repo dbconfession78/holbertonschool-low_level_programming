@@ -5,7 +5,7 @@
 /**
  * print_dog - prints an instance of struct dog
  *
- * @dog: instance of struct dog
+ * @d: instance of struct dog
  *
  * Return: void
  */

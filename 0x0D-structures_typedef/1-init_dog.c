@@ -7,7 +7,7 @@
  * @d: instance of struct dog
  * @name: dog's name
  * @age: dog's age
- * @owener: dog's owener;
+ * @owner: dog's owener;
  *
  * Return: void
  */

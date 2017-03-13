@@ -14,13 +14,12 @@ void print_all(const char * const format, ...)
 	int printed, i = 0;
 	char *str;
 
-	va_start(list, format);
 	while (!format)
 	{
 		printf("\n");
 		return;
 	}
-
+	va_start(list, format);
 	while (format[i])
 	{
 		printed = 1;
@@ -39,7 +38,7 @@ void print_all(const char * const format, ...)
 			printf("%c", va_arg(list, int));
 			break;
 		case 'f':
-			printf("%g", va_arg(list, double));
+			printf("%f", va_arg(list, double));
 			break;
 		case 'i':
 			printf("%d", va_arg(list, int));

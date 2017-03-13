@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 {
 	va_list list;	int printed, i = 0; char *str;
 
-	while (!format)
+	if (!format)
 	{
 		printf("\n");
 		return;

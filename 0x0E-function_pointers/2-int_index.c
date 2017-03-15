@@ -2,30 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
-#include "holberton.h"
+#include "function_pointers.h"
 
 /**
  * int_index - searches for an integer
- * 
+ *
  * @array: array to search for integer
  * @size: size of array
- * @ //TODO: name this var
+ * @cmp: pointer to a function used to compare values
  *
- * Return - index of found element
+ * Return: index of first element ofr which cmp function doesn't return 0
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int result = 0;
+	int i;
 
-
-
-	return (result);
-
-}
-
-int main(void)
-{
-
-	return (0);
+	if (size < 0)
+		return (-1);
+	for (i = 0; i < size; i++)
+		if (cmp(array[i]) != 0)
+			return (i);
+	return (-1);
 }

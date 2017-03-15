@@ -2,25 +2,27 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
-#include "holberton.h"
+#include "function_pointers.h"
 
 /**
  * array_iterator - executes function as parameter on each element of an array
  *
  * @array: array to which each function is passed
  * @size: size of array
- * @: //TODO name this var
+ * @action: function passed as param to this function
  *
  * Return - void
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
+	unsigned int i;
 
-}
+	if(!array || !action)
+		return;
 
-int main(void)
-{
-
-	return (0);
+	for (i = 0; i < size; i++)
+	{
+		action(array[i]);
+	}
 }

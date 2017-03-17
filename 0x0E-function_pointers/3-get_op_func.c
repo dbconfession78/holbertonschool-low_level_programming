@@ -1,6 +1,3 @@
-#include <string.h>
-#include "3-calc.h"
-
 /**
  * get_op_func - selects function to perform requested math operation
  *
@@ -8,6 +5,10 @@
  *
  * Return: pointer to func corresponding to op given as aparm
  */
+
+#include "3-calc.h"
+#include <stdio.h>
+#include <string.h>
 
 int (*get_op_func(char *s))(int, int)
 {

@@ -7,7 +7,7 @@
  * main - entry point for program that performs simple math
  *
  * @argc: number of arguments passed to program
- * @argv: arguments passed to prgoram
+ * @argv: arguments passed to program
  *
  * Return:0 if succesful, exit 98 if incorrect argument count,
  * exit 99 if incorrect operator supplied

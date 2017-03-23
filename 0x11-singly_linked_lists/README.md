@@ -29,9 +29,9 @@ This project repo shows contains examples of how to build and use link lists in 
 - `helper_funcs.c`: helper functions for XXXXX:
       - `XXXX`: XXXX
       - `XXXX`: XXXX
-	  -
-	  -
-	  -
+	  .
+	  .
+	  .
 
 ## Author
 

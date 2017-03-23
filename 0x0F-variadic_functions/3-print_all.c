@@ -10,10 +10,13 @@
 
 void print_all(const char * const format, ...)
 {
-	va_list list;
-	int printed, i = 0;
-	char *str;
+	va_list list;	int printed, i = 0; char *str;
 
+	while (!format)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(list, format);
 	while (format[i])
 	{
@@ -46,6 +49,5 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
-	va_end(list);
-	printf("\n");
+	va_end(list); printf("\n");
 }

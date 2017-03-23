@@ -23,7 +23,7 @@ This project repo shows contains examples of how to build and use link lists in 
 	.
 
 ## File Descriptions
-- `holberton.h`: Header file containing
+- `lists.h`: Header file containing XXX, XXX
 
 - `XXXXX.c`: XXXXX
 - `helper_funcs.c`: helper functions for XXXXX:

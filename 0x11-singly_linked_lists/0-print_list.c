@@ -8,16 +8,13 @@
 /* printf allowed */
 size_t print_list(const list_t *h)
 {
-	size_t len;
+	size_t len = 0;
+	const list_t *temp_h = h;
 
-	len = 0;
-	if (!h)
-		return (0);
-
-	while (h)
+	while (temp_h)
 	{
-		printf("[%d] %s\n", h->len, h->str);
-		h = h->next; len++;
+		printf("[%d] %s\n", temp_h->len, temp_h->str);
+		temp_h = temp_h->next; len++;
 	}
 	return (len);
 }

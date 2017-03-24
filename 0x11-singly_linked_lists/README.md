@@ -16,23 +16,20 @@ This project repo shows contains examples of how to build and use link lists in 
 - Prohibited functions:
 ..* `printf`, `puts`, `calloc` `realloc`
 
-## Sample Use
-    XXXXX(xxxx);
-	.
-	.
-	.
-
 ## File Descriptions
-- `lists.h`: Header file containing XXX, XXX
-
-- `XXXXX.c`: XXXXX
-- `helper_funcs.c`: helper functions for XXXXX:
-      - `XXXX`: XXXX
-      - `XXXX`: XXXX
-	  .
-	  .
-	  .
-
+- `lists.h`: Header file containing 1 stucture and the prototypes for the programs functions 
+	- `lists_s`: a structure with one string, one unsigned int and a new struct pointing to the next structure in the link list
+	- `_strlen`: counts the number of characters in a string
+	- `print_list`: prints the character count and string from each structure in the linked list
+	- `list_len`: returns the number of nodes in a linked list
+	- `add_node`: adds a new structure node to the beginning of an existing linked list
+	- `add_node_en`: adds a new structure node to the end of an existing linked list
+	- `free_list`: frees memory allocated for an entire linked list
+- 0-print_list.c: function for the print_list prototype
+- 1-list_len.c: fucntion for the list_len prototype 
+- 2-add_node.c: function for the add_node prototype
+- 3-add_node_end.c: functionf for the add_node_end prototype
+- 4-free_list
 ## Author
 
 *Stuart Kuredjian* - [Github](https://github.com/dbconfession78) || [Twitter](https://twitter.com/StueyGK)

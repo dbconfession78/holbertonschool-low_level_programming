@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "lists.h"
 
 /**
  * _strlen - returns the length of a string
@@ -8,19 +8,11 @@
  * Return: number of characters
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
-	int i, c;
+	int c = 0;
 
-	i = 0;
-	c = -1;
-	while (c != 0)
-	{
-		c = s[i];
-		if (c != 0)
-		{
-			i++;
-		}
-	}
-	return (i);
+	while (s[c])
+		c++;
+	return (c);
 }

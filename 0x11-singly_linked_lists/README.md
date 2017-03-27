@@ -1,5 +1,5 @@
 ## Description
-This project repo shows contains examples of how to build and use link lists in the C programming language
+This project repo contains examples of how to build and use link lists in the C programming language
 ### Project requirements
 - Code compliance with [Betty](https://github.com/holbertonschool/Betty) style and document guidelines.
 - Code compuled on Ubuntu 14.04 LTS
@@ -23,7 +23,7 @@ This project repo shows contains examples of how to build and use link lists in 
 	- `print_list`: prints the character count and string from each structure in the linked list
 	- `list_len`: returns the number of nodes in a linked list
 	- `add_node`: adds a new structure node to the beginning of an existing linked list
-	- `add_node_en`: adds a new structure node to the end of an existing linked list
+	- `add_node_end`: adds a new structure node to the end of an existing linked list
 	- `free_list`: frees memory allocated for an entire linked list
 - 0-print_list.c: function for the print_list prototype
 - 1-list_len.c: fucntion for the list_len prototype 

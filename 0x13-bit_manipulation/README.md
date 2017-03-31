@@ -20,7 +20,7 @@
 - `holberton.h`: contains the prototypes for each corresponding .c function file
 - `0-binary_to_uint.c`: function file that converts base-2 to base-10
 - `1-print_binary.c`: converts from base-10 to base-2
-- '2-get_bit.c`: fetches bit value at a specified index
+- `2-get_bit.c`: fetches bit value at a specified index
 - `3-set-bit.c`: sets the value of a specified bit point
 - `4-clear_bit.c`: sets the value of a specified bit to 0
 - `5-flip_bits.c`: counts how many bits between two numbers need be swapped in order for them to match

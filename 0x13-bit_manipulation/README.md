@@ -1,13 +1,12 @@
 ## Description
-UPDATE: 
+
 ### Project requirements
-//TODO: DOUBLE CHECK REQUIREMENTS
 - Code compliance with [Betty](https://github.com/holbertonschool/Betty) style and document guidelines.
 - Code compuled on Ubuntu 14.04 LTS
 - Code compiled using flags: `-Wall`, `-Werror`, `-Wextra`, `-pedantic
 - Cannot use global variables.
 - Restricted to no more than 5 functions per file.
-- Function prototypes should be included in header file `lists.h`
+- Function prototypes should be included in header file `holberton.h`
 - Header files should be include guarded.
 - Authorized functions and macros:
 ..* `malloc` (`man 3 malloc`)
@@ -18,12 +17,13 @@ UPDATE:
 ..* `standard library functions`
 
 ## File Descriptions
-- `lists.h`: Header file containing 1 stucture and the prototypes for the programs functions 
-	- `lists_s`: a structure with one string, one unsigned int and a new struct pointing to the next structure in the link list
-	- `XXXX`: XXX
-
-- 0-XXX.c: XXX
-
+- `holberton.h`: contains the prototypes for each corresponding .c function file
+- `0-binary_to_uint.c`: function file that converts base-2 to base-10
+- `1-print_binary.c`: converts from base-10 to base-2
+- '2-get_bit.c`: fetches bit value at a specified index
+- `3-set-bit.c`: sets the value of a specified bit point
+- `4-clear_bit.c`: sets the value of a specified bit to 0
+- `5-flip_bits.c`: counts how many bits between two numbers need be swapped in order for them to match
 
 ## Author
 

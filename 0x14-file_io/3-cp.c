@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	{
 		wr_val = write(fd_to, buffer, rd_val);
 		if (wr_val == -1 || wr_val != rd_val)
-			dprintf(2, "Error: Can't write to file %s\n", argv[2]), exit(99);
+			dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
 		rd_val = read(fd_from, buffer, BUFFER_SIZE);
 		if (rd_val == -1)
 			dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);

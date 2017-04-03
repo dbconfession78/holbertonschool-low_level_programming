@@ -18,9 +18,10 @@ int main(int argc, char *argv[])
 	if (!argv[1])
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
 	if (!argv[2])
-		dprintf(2, "Erro\r: Can't write to %s\n", argv[2]), exit(99);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
 	fd_from = open(argv[1], O_RDONLY);
-	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC,
+				 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	rd_val = read(fd_from, buffer, BUFFER_SIZE);
 	if (rd_val == -1)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);

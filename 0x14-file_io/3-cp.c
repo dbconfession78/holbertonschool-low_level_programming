@@ -1,27 +1,68 @@
 #include "holberton.h"
+#define BUFFER_SIZE 1024
+
 
 /**
- * XXXXXXXXXXXXXXXXXX - copies the content of a file to another file
- * @XXXXXXXXX:
- * @XXXXXXXXX:
- * Return: 1 if succesfully appended;
- * 1 if text_content is NULL and file already exists
- * -1 on failure to append
- * -1 if filename is NULL
+ * read_error - exits program and reports to stderr
+ * when unable to read from source file
+ * @src_filename: source filename
+ * Return: void
  */
-
-/* 1. usage: cp file_from file_to */
-/* 2. if number of argument isnt the correct one, exit 97 and print 'Usage: cp file_from file_to', followed by new line on the POSIX standard error */
-/* 3. if file_to already exists, truncate it */
-/* 4. if file_from doesnt exist, or if you cant read it, exit 98 and print 'Error: Can't read from file NAME_OF_THE_FILE', followed by a new line on the POSIX standard error (where NAME_OF_FILE is the first argument passed to the program */
-/* 5. if cant create or write to 'file_to' fails, exit 99 and print 'Error: Can't write to NAME_OF_THEFILE' followd by new line on the POSIX stanard error (where NAME_OF_FILE is the 2nd arg passed to prog */
-/* 6. if cant close file descriptory, exit 100 and print 'Error: Can't close fd FD_VALUE, followed by new line on the POSIX standard error (where FD_Value is the value of the file descriptor) */
-/* 7. If a file with the name of file_to file already exists, don't change persmissions */
-/* 8. Otherwise, if file_to doesn't exist, file should have rw-rw-r-- permissions. */
-/* 9. must read 1,204 bytes at a time from the file_from to make less system calls. Use a buffer */
-/* 10. ALLOWED TO USE dprintf */
-
-void CHANGE_ME(void)
+void read_error(char *src_filename)
 {
+	dprintf(2, "Error: Can't read from file %s\n", src_filename);
+	exit(98);
+}
 
+
+/**
+ * write_error - exits program and reports to stderr
+ * when unable to write to target file
+ *
+ * @tar_filename: target filename
+ * Return: void
+ */
+void write_error(char *tar_filename)
+{
+	dprintf(2, "Error: Can't write to %s\n", tar_filename);
+	exit(99);
+}
+
+/**
+ * main - program entry point
+ * @argc: number count passed to program
+ * @argv: pogram name, source filename, target filename
+ * Return: always return 0
+ */
+int main(int argc, char *argv[])
+{
+	int fd_from, fd_to, input, output;
+	char buffer[BUFFER_SIZE];
+
+	output = 1;
+	if (argc != 3)
+		dprintf(2, "Usage: cp file_from file_to\n"); exit(97);
+	if (!argv[1])
+		read_error(argv[1]);
+	if (!argv[2])
+		write_error(argv[2]);
+	fd_from = open(argv[1], O_RDONLY);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	input = read(fd_from, buffer, BUFFER_SIZE);
+	if (input == -1)
+		read_error(argv[1]);
+	while (input != 0)
+	{
+		output = write(fd_to, buffer, input);
+		if (output == -1 || output != input)
+			write_error(argv[2]);
+		input = read(fd_from, buffer, BUFFER_SIZE);
+		if (input == -1)
+			read_error(argv[1]);
+	}
+	if (close(fd_from) == -1)
+		dprintf(2, "Error: Can't close fd %d\n", fd_from); exit(100);
+	if (close(fd_to) == -1)
+		dprintf(2, "Error: Can't close fd %d\n", fd_to); exit(100);
+	return (0);
 }

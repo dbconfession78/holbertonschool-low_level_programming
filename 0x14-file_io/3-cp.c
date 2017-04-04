@@ -1,18 +1,33 @@
 #include "holberton.h"
 #define BUFFER_SIZE 1024
 
+/**
+ * read_error - handles program exit when unable to read source file
+ * @src_filename: file unable to be read from
+ * Return: void
+ */
 void read_error(char *src_filename)
 {
 	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_file);
 	exit(98);
 }
 
+/**
+ * write_error - handles program exit when unable to target file
+ * @target_filename: name of file unable to be written to
+ * Return: void
+ */
 void write_error(char *target_filename)
 {
 	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 	exit(99);
 }
 
+/**
+ * fd_close_error - handles program exit when unable to close fd
+ * @fd: fd value that wont close
+ * Return: void
+ */
 void fd_close_error(int fd)
 {
 	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd), exit(100);

@@ -9,21 +9,21 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	int fd;
+	char *buffer;
 
-}
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
 
-int main(int ac, char **av)
-{
-    ssize_t n;
+	buffer = malloc(sizeof(char) * letters);
+	if (!buffer)
+		return (0);
 
-    if (ac != 2)
-    {
-        dprintf(2, "Usage: %s filename\n", av[0]);
-        exit(1);
-    }
-    n = read_textfile(av[1], 114);
-    printf("\n(printed chars: %li)\n", n);
-    n = read_textfile(av[1], 1024);
-    printf("\n(printed chars: %li)\n", n);
-    return (0);
+	if (!(read(fd, buffer, letters)))
+		return (0);
+	dprintf(1, buffer, letters);
+	close(fd);
+	return (strlen(buffer));
+
 }

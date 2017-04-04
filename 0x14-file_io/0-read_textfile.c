@@ -1,6 +1,31 @@
 #include "holberton.h"
 
 /**
+ * _strlen - returns the length of a string
+ *
+ *@s: character array to count
+ *
+ * Return: number of characters
+ */
+
+int _strlen(char *s)
+{
+	int i, c;
+
+	i = 0;
+	c = -1;
+	while (c != 0)
+	{
+		c = s[i];
+		if (c != 0)
+		{
+			i++;
+		}
+	}
+	return (i);
+}
+
+/**
  * read_textfile - reads a text file and prints it to the POSIX standard output
  * @filename: name of file to be read and printed
  * @letters: number of letters to read and print
@@ -24,6 +49,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	dprintf(1, buffer, letters);
 	close(fd);
-	return (strlen(buffer));
+	return (_strlen(buffer));
 
 }

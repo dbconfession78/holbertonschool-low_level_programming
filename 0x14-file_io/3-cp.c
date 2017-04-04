@@ -8,7 +8,7 @@
  */
 void read_error(char *src_filename)
 {
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_file);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_filename);
 	exit(98);
 }
 
@@ -19,7 +19,7 @@ void read_error(char *src_filename)
  */
 void write_error(char *target_filename)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", target_filename);
 	exit(99);
 }
 

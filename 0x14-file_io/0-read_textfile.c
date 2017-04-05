@@ -43,15 +43,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-
 	if (read(fd, buffer, letters) == -1)
 		return (0);
 	buffer_len = write(STDOUT_FILENO, buffer, _strlen(buffer));
 	if (buffer_len == -1)
 		return (0);
-
-/*	free(buffer); */
 	if (close(fd) == -1)
 		return (0);
-	return (buffer_len);
+	return (close(fd) == -1 ? 0 : buffer_len);
 }

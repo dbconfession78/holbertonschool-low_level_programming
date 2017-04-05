@@ -52,7 +52,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	write(1, buffer, _strlen(buffer));
-	id(close(fd) == -1)
+	if(close(fd) == -1)
 		return (0);
 	buffer_len = _strlen(buffer);
 	free(buffer);

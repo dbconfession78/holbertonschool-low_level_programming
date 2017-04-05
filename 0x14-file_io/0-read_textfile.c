@@ -39,16 +39,24 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
+		getchar();
 		return (0);
+	}
 
 	buffer = malloc(sizeof(char) * letters);
 	if (!buffer)
+	{
 		return (0);
+	}
 
-	if (!(read(fd, buffer, letters)))
+	if (read(fd, buffer, letters) == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 	dprintf(1, buffer, letters);
 	close(fd);
+/*	free(buffer); */
 	return (_strlen(buffer));
-
 }

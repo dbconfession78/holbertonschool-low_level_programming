@@ -35,29 +35,30 @@ int _strlen(char *s)
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	char *buffer;
-	ssize_t buffer_len;
+	char *buffer = malloc(sizeof(char) * letters);
+	ssize_t buffer_len = 0;
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	if (!filename || !buffer)
 		return (0);
 
-	buffer = malloc(sizeof(char) * letters);
-	if (!buffer)
+	if ((fd = open(filename, O_RDONLY)) == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 
 	if (read(fd, buffer, letters) == -1)
 	{
 		free(buffer);
-		return (0);
+		return(0);
 	}
-	buffer_len = _strlen(buffer);
-	buffer_len = write(STDOUT_FILENO, buffer, buffer_len);
-	if (buffer_len == -1)
+
+	if ((buffer_len = write(STDOUT_FILENO, buffer, _strlen(buffer))) == -1)
 	{
 		free(buffer);
 		return (0);
 	}
+
 	free(buffer);
 	if (close(fd) == -1)
 		return (-1);

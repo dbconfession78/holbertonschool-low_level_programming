@@ -42,14 +42,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-	{
-		/* free(buffer); */
 		return (0);
-	}
 
 	if (read(fd, buffer, letters) == -1)
 	{
-		free(buffer);
+/*		free(buffer); */
 		return (0);
 	}
 	buffer_len = write(STDOUT_FILENO, buffer, _strlen(buffer));

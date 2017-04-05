@@ -53,7 +53,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
-	buffer_len = write(STDOUT_FILENO, buffer, _strlen(buffer));
+	buffer_len = _strlen(buffer);
+	buffer_len = write(STDOUT_FILENO, buffer, buffer_len);
 	if (buffer_len == -1)
 	{
 		free(buffer);

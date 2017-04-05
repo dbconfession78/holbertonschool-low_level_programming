@@ -55,7 +55,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 /*	letters_written = write(1, buffer, buffer_len); */
 /*	if (letters_written == -1 || letters_written != buffer_len) */
-	if (write(1, buffer, _strlen(buffer)))
+	if (write(1, buffer, _strlen(buffer)) == -1)
 	{
 		free(buffer);
 		return (0);

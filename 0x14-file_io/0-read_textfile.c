@@ -36,6 +36,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char *buffer;
+	ssize_t buffer_len;
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
@@ -57,6 +58,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	write(1, buffer, _strlen(buffer));
 	close(fd);
-/*	free(buffer); */
-	return (_strlen(buffer));
+	buffer_len = _strlen(buffer);
+	free(buffer);
+	return (buffer_len);
 }

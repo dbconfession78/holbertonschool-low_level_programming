@@ -1,36 +1,28 @@
-# Holberton School - 0x05. Python - Exceptions
+# Holberton School - 0x17. C - Dynamic Libraries
 Description
 
 The focus of this project is to learn:
-* when using exceptions are neccessary and how to handle them
-* the difference between errors and exceptions
-* the purpose of catching exceptions
-* how to raisea builtin expression
-* when implementing a clean-up action is neccessary after catching an exception
+* what a dynamic library is and how it works
+* how to create and use a dynamic library
+* what the environment variable $LD_LIBRASRY_PATH is and how to use it
+* the difference ebtween static and shared libraries
+* basic use of nm, ldd and ldconfig
 
 ## Environment
-* __Environment:__ Ubuntu 14.04 LTS
-* __python3 version:__ 3.4.3
-* __style:__ PEP 8
+* Ubuntu 14.04 LTS
 
 ## New commands / functions used:
-TODO
+``nm -D``, ``ldd``, gcc options: ``-c``, ``-fpic``, ``-shared``, ``-L``, ``-l``
+
 
 ## Helpful Links
-* https://docs.python.org/3.4/tutorial/errors.html
-* https://www.youtube.com/watch?v=7vbgD-3s-w4
-* https://docs.python.org/3.4/tutorial/index.html
+* https://www.youtube.com/watch?v=eW5he5uFBNM
+* https://www.google.com/#q=linux+create+dynamic+library
 
 ## File Descriptions
-- `0-safe_print_list.py`: prints x elements of a list
-- `1-safe_print_integer.py`: prints an integer with "{:d}".format()
-- `2-safe_print_list_integers.py`: prints the first x elemnts of a list that are integers
-- `3-safe_print_division.py`: divides two integers and prints the result
-- `4-list_division.py`: divides element by element between 2 lists
-- `5-raise_exception.py`: raises a type exception
-- `6-raise_exception_msg.py`: raises a name exception with a message
-- `100-safe_print_integer_err.py`: prints an integer
-- `101-safe_function.py`: executes a function safely
+- `libholberton.so`: dynamic library containing various functions
+- `holberton.h`: header file containing prototypes for functions used for this task
+- `1-create_dynamic_lib.sh`: script that creates a dynamic library called liball.c files in the current directory
 
 ## Author
 Stuart Kuredjian

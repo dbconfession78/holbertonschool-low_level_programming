@@ -1,3 +1,0 @@
-[submodule "test"]
-	path = 0x18-stacks_queues_lifo_fifo/monty
-	url = https://www.github.com/dbconfession78/monty

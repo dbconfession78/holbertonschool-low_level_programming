@@ -25,14 +25,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash = key_index((unsigned char *) key, ht->size);
 	/* check if collision: adding to same index */
 	if (ht->array[hash])
-	{
+	{/
 		temp = ht->array[hash];
 		while (temp && strcmp(temp->key, key) != 0)
 			temp = temp->next;
 		/* if (temp && strcmp(temp->key, key) == 0) */
 		/* { */
-		/* 	free(temp->value); temp->value = strdup(value); */
-		/* 	return (1); */
+		/* free(temp->value); temp->value = strdup(value); */
+		/* return (1); */
 		/* } */
 	}
 	/* set node's key */

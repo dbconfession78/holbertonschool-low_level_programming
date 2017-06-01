@@ -28,12 +28,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* check if collision: adding to same index */
 	if (ht->array[hash])
 	{
-		printf("(0)"); getchar();
 		temp = ht->array[hash];
 		while (temp && strcmp(temp->key, key) != 0)
 			temp = temp->next;
 	}
-	printf("(1)"); getchar();
 	/* set node's key */
 	new_node->key = strdup(key);
 	if (new_node->key == NULL)

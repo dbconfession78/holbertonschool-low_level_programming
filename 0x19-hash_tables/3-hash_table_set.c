@@ -7,23 +7,19 @@
  * @value: value associated with the key
  * Return: 1 on success; 0 on fail
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node, *temp, *head;
-	unsigned long int index;
+	unsigned long int idx;
+	hash_node_t *node, *temp, *new_node;
 
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
-	/* hash the index */
-	index = key_index((unsigned char *)key, ht->size);
-	head = temp = ht->array[index];
-	if (head)
+	idx = key_index((unsigned char *)key, ht->size);
+	node = temp = ht->array[idx];
+	if (node)
 	{
-		/* then move through the linked list */
-		while (temp != NULL)
+		while (temp)
 		{
-			/* if the key is found , replace it's value */
 			if (!strcmp(temp->key, key))
 			{
 				free(temp->value);
@@ -33,21 +29,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			temp = temp->next;
 		}
 	}
-	node = malloc(sizeof(hash_node_t));
-	if (!node)
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
 		return (0);
-	node->key = strdup(key);
-	node->value = strdup(value);
-	if (!node->key || !node->value)
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
+	if (!new_node->key || !new_node->value)
 	{
-		if (node->key)
-			free(node->key);
-		if (node->value)
-			free(node->value);
-		free(node);
+		if (new_node->key)
+			free(new_node->key);
+		free(new_node);
 		return (0);
 	}
-	node->next = head;
-	ht->array[index] = node;
+	new_node->next = node;
+	ht->array[idx] = new_node;
 	return (1);
 }

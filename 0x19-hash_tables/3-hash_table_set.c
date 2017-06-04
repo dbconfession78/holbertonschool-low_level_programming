@@ -16,17 +16,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
 	/* hash the index */
-	index = key_index((const unsigned char *)key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size); /* maybe remove const *
 	/* if that index exists, set a pointer to it */
 	head = ht->array[index];
 	temp = head;
-	if (temp)
+	if (head)
 	{
 		/* then move through the linked list */
 		while (temp != NULL)
 		{
 			/* if the key is found , replace it's value */
-			if (strcmp(key, temp->key) == 0)
+			if (strcmp(temp->key, key) == 0)
 			{
 				free(temp->value);
 				temp->value = strdup(value);
@@ -38,9 +38,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-	node->value = strdup(value);
 	node->key = strdup(key);
-	if (node->value == NULL || node->key == NULL)
+	node->value = strdup(value);
+	if (node->key == NULL || node->value == NULL)
 	{
 		if (node->key != NULL)
 			free(node->key);

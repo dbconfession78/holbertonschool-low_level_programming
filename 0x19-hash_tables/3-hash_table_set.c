@@ -18,8 +18,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* hash the index */
 	index = key_index((unsigned char *)key, ht->size);
 	head = temp = ht->array[index];
-
-
 	if (head)
 	{
 		/* then move through the linked list */

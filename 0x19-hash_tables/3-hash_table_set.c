@@ -44,6 +44,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	return (1);
 }
 
+/**
+ * build_node - creates and populates a hash_node_t struct
+ * @key: key value
+ * @value: value associated with key
+ * Return: populated hash_node_t struct
+ */
 
 hash_node_t *build_node(const char *key, const char *value)
 {

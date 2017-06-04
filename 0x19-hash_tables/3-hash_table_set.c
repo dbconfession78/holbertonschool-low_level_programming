@@ -73,6 +73,6 @@ hash_node_t *build_node(const char *key, const char *value)
 		free(node);
 		return (NULL);
 	}
-	node->next = NULL;
+
 	return (node);
 }

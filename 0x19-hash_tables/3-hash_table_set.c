@@ -11,8 +11,6 @@ hash_node_t *build_node(const char *key, const char *value)
 {
 	hash_node_t *node;
 
-	if (key == NULL || value == NULL || strlen(key) <= 0)
-		return (NULL);
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (NULL);
@@ -65,7 +63,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				temp->value = strdup(value);
 				if (temp->value != NULL)
 					return (1);
-				return (0);
 			}
 			temp = temp->next;
 		}

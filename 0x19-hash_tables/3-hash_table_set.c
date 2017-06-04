@@ -17,8 +17,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	/* hash the index */
 	index = key_index((unsigned char *)key, ht->size);
-	head = ht->array[index];
-	temp = head;
+	head = temp = ht->array[index];
+
+
 	if (head)
 	{
 		/* then move through the linked list */

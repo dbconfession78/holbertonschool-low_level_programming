@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while (temp != NULL)
 		{
 			/* if the key is found , replace it's value */
-			if (strcmp(key, temp->key) == 0)
+			if (!strcmp(key, temp->key))
 			{
 				free(temp->value);
 				temp->value = strdup(value);

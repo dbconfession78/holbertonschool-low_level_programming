@@ -42,8 +42,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (node->key)
 			free(node->key);
-		if (node->value)
-			free(node->value);
 		free(node);
 		return (0);
 	}

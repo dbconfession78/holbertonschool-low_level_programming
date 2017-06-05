@@ -46,16 +46,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
-	/* hash the index */
 	index = key_index((unsigned char *)key, ht->size);
-	head = temp = ht->array[index];
+	head = temp = ht->array[idx];
 	if (head)
 	{
-		/* then move through the linked list */
 		while (temp)
 		{
-			/* if the key is found , replace it's value */
-			if (strcmp(key, temp->key) == 0)
+			if (!strcmp(temp->key, key))
 			{
 				free(temp->value);
 				temp->value = strdup(value);

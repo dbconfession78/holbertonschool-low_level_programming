@@ -32,7 +32,7 @@ hash_node_t *build_node(const char *key, const char *value)
 
 
 /**
- * hash_table_set - adds an element to a hash table
+ * hash_table_set - check the code for Holberton School students.
  * @ht: hash table to add element to
  * @key: key of element to add
  * @value: value associated with the key

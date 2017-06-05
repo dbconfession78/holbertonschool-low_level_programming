@@ -1,12 +1,12 @@
 #include "hash_tables.h"
 
 /**
- * build_node - adds hash node to hash table array.
- * @key: the key you want to add to the hash table
- * @value: the value associated with the key
- *
- * Return: new node or NULL on failure
+ * build_node - creates and populates a hash_node_t struct
+ * @key: key value
+ * @value: value associated with key
+ * Return: populated hash_node_t struct
  */
+
 hash_node_t *build_node(const char *key, const char *value)
 {
 	hash_node_t *new_node;
@@ -32,31 +32,30 @@ hash_node_t *build_node(const char *key, const char *value)
 
 
 /**
- * hash_table_set - check the code for Holberton School students.
- * @ht: the hash table to be added to
- * @key: the key you want to add to the hash table
- * @value: the value associated with the key
- *
- * Return: 1 on success 0 on failure
+ * hash_table_set - adds an element to a hash table
+ * @ht: hash table to add element to
+ * @key: key of element to add
+ * @value: value associated with the key
+ * Return: 1 on success; 0 on fail
  */
-
-
-
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx;
-	hash_node_t *node, *temp, *new_node;
+	hash_node_t *node, *temp, *head;
+	unsigned long int index;
 
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
-	idx = key_index((unsigned char *)key, ht->size);
-	node = temp = ht->array[idx];
-	if (node)
+	/* hash the index */
+	index = key_index((unsigned char *)key, ht->size);
+	head = temp = ht->array[index];
+	if (head)
 	{
+		/* then move through the linked list */
 		while (temp)
 		{
-			if (!strcmp(temp->key, key))
+			/* if the key is found , replace it's value */
+			if (strcmp(key, temp->key) == 0)
 			{
 				free(temp->value);
 				temp->value = strdup(value);
@@ -65,12 +64,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			temp = temp->next;
 		}
 	}
-
-	new_node = build_node(key, value);
-	if (!new_node)
+	node = build_node(key, value);
+	if (node == NULL)
 		return (0);
-	new_node->next = node;
-	ht->array[idx] = new_node;
-
+	node->next = head;
+	ht->array[index] = node;
 	return (1);
 }

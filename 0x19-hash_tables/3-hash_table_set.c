@@ -10,22 +10,21 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node, *temp;
+	hash_node_t *node, *temp, *head;
 	unsigned long int index;
 
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
 	/* hash the index */
 	index = key_index((unsigned char *)key, ht->size);
-	/* if that index exists, set a pointer to it */
-	temp = ht->array[index];
-	if (ht->array[index])
+	head = temp = ht->array[index];
+	if (head)
 	{
 		/* then move through the linked list */
 		while (temp != NULL)
 		{
 			/* if the key is found , replace it's value */
-			if (strcmp(key, temp->key) == 0)
+			if (!strcmp(temp->key, key))
 			{
 				free(temp->value);
 				temp->value = strdup(value);
@@ -35,18 +34,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	}
 	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
+	if (!node)
 		return (0);
-	node->value = strdup(value);
 	node->key = strdup(key);
-	if (node->value == NULL || node->key == NULL)
+	node->value = strdup(value);
+	if (!node->key || !node->value)
 	{
-		if (node->key != NULL)
+		if (node->key)
 			free(node->key);
+		if (node->value)
+			free(node->value);
 		free(node);
 		return (0);
 	}
-	node->next = temp;
+	node->next = head;
 	ht->array[index] = node;
 	return (1);
 }

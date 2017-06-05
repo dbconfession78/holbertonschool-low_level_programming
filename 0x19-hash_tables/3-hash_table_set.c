@@ -15,15 +15,12 @@ hash_node_t *build_node(const char *key, const char *value)
 	if (node == NULL)
 		return (NULL);
 	node->key = strdup(key);
-	if (node->key == NULL)
-	{
-		free(node);
-		return (NULL);
-	}
 	node->value = strdup(value);
-	if (node->value == NULL)
+
+	if (node->key == NULL || node->value == NULL)
 	{
-		free(node->key);
+		if (node->key != NULL)
+			free(node->key);
 		free(node);
 		return (NULL);
 	}

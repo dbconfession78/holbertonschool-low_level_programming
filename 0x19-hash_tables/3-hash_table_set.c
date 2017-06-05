@@ -5,7 +5,7 @@
  * @ht: hash table to add element to
  * @key: key of element to add
  * @value: value associated with the key
- * Return: 1 on success 0 on fail
+ * Return: 1 on success; 0 on fail
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
 	/* hash the index */
-	index = key_index((const unsigned char *)key, ht->size);
+	index = key_index((unsigned char *)key, ht->size);
 	/* if that index exists, set a pointer to it */
 	temp = ht->array[index];
 	if (ht->array[index])

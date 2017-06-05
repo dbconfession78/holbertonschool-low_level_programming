@@ -47,7 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
-	head = temp = ht->array[idx];
+	head = temp = ht->array[index];
 	if (head)
 	{
 		while (temp)

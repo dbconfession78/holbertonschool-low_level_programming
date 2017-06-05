@@ -30,14 +30,17 @@ hash_node_t *build_node(const char *key, const char *value)
 	return (new_node);
 }
 
-
 /**
- * hash_table_set - adds an element to a hash table
- * @ht: hash table to add element to
- * @key: key of element to add
- * @value: value associated with the key
- * Return: 1 on success; 0 on fail
+ * hash_table_set - check the code for Holberton School students.
+ * @ht: the hash table to be added to
+ * @key: the key you want to add to the hash table
+ * @value: the value associated with the key
+ *
+ * Return: 1 on success 0 on failure
  */
+
+
+
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {

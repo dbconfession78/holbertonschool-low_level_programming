@@ -62,9 +62,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	}
 	node = build_node(key, value);
-	if (node == NULL)
+	if (!node)
 		return (0);
 	node->next = head;
 	ht->array[index] = node;
+
 	return (1);
 }

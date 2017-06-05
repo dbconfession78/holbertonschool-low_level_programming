@@ -46,20 +46,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	/* hash the index */
 	index = key_index((unsigned char *)key, ht->size);
-	head = ht->array[index];
-	temp = head;
-	if (temp)
+	head = temp = ht->array[index];
+	if (head)
 	{
 		/* then move through the linked list */
-		while (temp != NULL)
+		while (temp)
 		{
 			/* if the key is found , replace it's value */
 			if (strcmp(key, temp->key) == 0)
 			{
 				free(temp->value);
 				temp->value = strdup(value);
-				if (temp->value != NULL)
-					return (1);
+				return (1);
 			}
 			temp = temp->next;
 		}
@@ -67,7 +65,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = build_node(key, value);
 	if (node == NULL)
 		return (0);
-	node->next = ht->array[index];
+	node->next = head;
 	ht->array[index] = node;
 	return (1);
 }

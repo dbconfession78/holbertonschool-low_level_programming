@@ -1,12 +1,12 @@
 #include "hash_tables.h"
 
 /**
- * build_node - creates and populates a hash_node_t struct
- * @key: key value
- * @value: value associated with key
- * Return: populated hash_node_t struct
+ * build_node - adds hash node to hash table array.
+ * @key: the key you want to add to the hash table
+ * @value: the value associated with the key
+ *
+ * Return: new node or NULL on failure
  */
-
 hash_node_t *build_node(const char *key, const char *value)
 {
 	hash_node_t *new_node;

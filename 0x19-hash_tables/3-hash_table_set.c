@@ -35,7 +35,7 @@ hash_node_t *build_node(const char *key, const char *value)
  * hash_table_set - check the code for Holberton School students.
  * @ht: the hash table to be added to
  * @key: the key you want to add to the hash table
- * @value: value associated with the key
+ * @value: the value associated with the key
  *
  * Return: 1 on success; 0 on fail
  */

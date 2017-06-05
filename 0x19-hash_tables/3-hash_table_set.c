@@ -37,7 +37,7 @@ hash_node_t *build_node(const char *key, const char *value)
  * @key: the key you want to add to the hash table
  * @value: the value associated with the key
  *
- * Return: 1 on success; 0 on fail
+ * Return: 1 on success 0 on failure
  */
 
 

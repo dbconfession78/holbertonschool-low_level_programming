@@ -1,59 +1,61 @@
 #include "hash_tables.h"
 
 /**
- * build_node - creates and populates a hash_node_t struct
- * @key: key value
- * @value: value associated with key
- * Return: populated hash_node_t struct
+ * add_hash_node - adds hash node to hash table array.
+ * @key: the key you want to add to the hash table
+ * @value: the value associated with the key
+ *
+ * Return: new node or NULL on failure
  */
-
-hash_node_t *build_node(const char *key, const char *value)
+hash_node_t *add_hash_node(const char *key, const char *value)
 {
-	hash_node_t *node;
+	hash_node_t *new_node;
 
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
 		return (NULL);
-	node->key = strdup(key);
-	node->value = strdup(value);
 
-	if (node->key == NULL || node->value == NULL)
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
+
+	if (!new_node->key || !new_node->value)
 	{
-		if (node->key != NULL)
-			free(node->key);
-		free(node);
+		if (new_node->key)
+			free(new_node->key);
+		free(new_node);
 		return (NULL);
 	}
 
-	return (node);
+	return (new_node);
 }
 
 
 /**
- * hash_table_set - adds an element to a hash table
- * @ht: hash table to add element to
- * @key: key of element to add
- * @value: value associated with the key
- * Return: 1 on success; 0 on fail
+ * hash_table_set - check the code for Holberton School students.
+ * @ht: the hash table to be added to
+ * @key: the key you want to add to the hash table
+ * @value: the value associated with the key
+ *
+ * Return: 1 on success 0 on failure
  */
+
+
+
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node, *temp, *head;
-	unsigned long int index;
+	unsigned long int idx;
+	hash_node_t *node, *temp, *new_node;
 
 	if (!ht || !key || !value || !ht->array || strlen(key) == 0)
 		return (0);
-	/* hash the index */
-	index = key_index((unsigned char *)key, ht->size);
-	head = temp = ht->array[index];
-	if (head)
+	idx = key_index((unsigned char *)key, ht->size);
+	node = temp = ht->array[idx];
+	if (node)
 	{
-		/* then move through the linked list */
 		while (temp)
 		{
-			/* if the key is found , replace it's value */
-			if (strcmp(key, temp->key) == 0)
+			if (!strcmp(temp->key, key))
 			{
 				free(temp->value);
 				temp->value = strdup(value);
@@ -62,10 +64,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			temp = temp->next;
 		}
 	}
-	node = build_node(key, value);
-	if (node == NULL)
+
+	new_node = add_hash_node(key, value);
+	if (!new_node)
 		return (0);
-	node->next = head;
-	ht->array[index] = node;
+	new_node->next = node;
+	ht->array[idx] = new_node;
+
 	return (1);
 }

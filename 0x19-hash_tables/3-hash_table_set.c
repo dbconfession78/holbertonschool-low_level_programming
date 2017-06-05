@@ -1,13 +1,13 @@
 #include "hash_tables.h"
 
 /**
- * add_hash_node - adds hash node to hash table array.
+ * build_node - adds hash node to hash table array.
  * @key: the key you want to add to the hash table
  * @value: the value associated with the key
  *
  * Return: new node or NULL on failure
  */
-hash_node_t *add_hash_node(const char *key, const char *value)
+hash_node_t *build_node(const char *key, const char *value)
 {
 	hash_node_t *new_node;
 
@@ -23,6 +23,7 @@ hash_node_t *add_hash_node(const char *key, const char *value)
 		if (new_node->key)
 			free(new_node->key);
 		free(new_node);
+
 		return (NULL);
 	}
 
@@ -65,7 +66,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	}
 
-	new_node = add_hash_node(key, value);
+	new_node = build_node(key, value);
 	if (!new_node)
 		return (0);
 	new_node->next = node;

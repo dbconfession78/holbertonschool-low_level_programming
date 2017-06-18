@@ -33,6 +33,8 @@ void do_quick_sort(int *array, int lo, int hi, size_t size)
 		do_quick_sort(array, lo, i - 1, size);
 		do_quick_sort(array, i + 1, hi, size);
 	}
+	else
+		return;
 }
 
 /**

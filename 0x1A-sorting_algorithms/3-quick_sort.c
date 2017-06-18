@@ -27,14 +27,13 @@ void do_quick_sort(int *array, int lo, int hi, size_t size)
 {
 	int i;
 
-	if (lo < hi)
-	{
-		i = partition(array, lo, hi, size);
-		do_quick_sort(array, lo, i - 1, size);
-		do_quick_sort(array, i + 1, hi, size);
-	}
-	else
+	if (hi <= lo)
 		return;
+
+	i = partition(array, lo, hi, size);
+	do_quick_sort(array, lo, i - 1, size);
+	do_quick_sort(array, i + 1, hi, size);
+
 }
 
 /**
@@ -49,7 +48,11 @@ void do_quick_sort(int *array, int lo, int hi, size_t size)
 int partition(int *array, int lo, int hi, size_t size)
 {
 	int i, j, pivot, temp;
+	int x;
+	int start_array[size];
 
+	for (x = 0; x < size; x++)
+		start_array[x] = array[x];
 	j = lo;
 	pivot = array[hi];
 	for (i = lo; i < hi; i++)
@@ -60,12 +63,28 @@ int partition(int *array, int lo, int hi, size_t size)
 			array[i] = array[j];
 			array[j] = temp;
 			j++;
-			print_array(array, size);
+			for (x = 0; x < size; x++)
+			{
+				if (start_array[x] != array[x])
+				{
+					print_array(array, size);
+					break;
+				}
+			}
 		}
 	}
 	temp = array[j];
 	array[j] = array[hi];
 	array[hi] = temp;
-	print_array(array, size);
+
+	for (x = 0; x < size; x++)
+	{
+		if (start_array[x] != array[x])
+		{
+			print_array(array, size);
+			break;
+		}
+	}
+
 	return (j);
 }

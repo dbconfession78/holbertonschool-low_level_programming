@@ -8,6 +8,9 @@
  */
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
+
 	do_quick_sort(array, 0, size - 1, size);
 }
 
@@ -50,12 +53,16 @@ int partition(int *array, int lo, int hi, size_t size)
 	pivot = array[hi];
 	while (1 == 1)
 	{
-		j--;
-		for ( ; array[j] > pivot; j--)
-			;
-		i++;
-		for ( ; array[i] < pivot; i++)
-			;
+		do j--;
+		while (array[j] > pivot);
+		do i++;
+		while (array[i] < pivot);
+		/* j--; */
+		/* for ( ; array[j] > pivot; j--) */
+		/* 	; */
+		/* i++; */
+		/* for ( ; array[i] < pivot; i++) */
+		/* 	; */
 		if (i >= j)
 			return (i);
 

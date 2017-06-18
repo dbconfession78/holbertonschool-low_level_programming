@@ -18,7 +18,7 @@ void selection_sort(int *array, size_t size)
 		return;
 
 	/* for each number, check each pair for high/low */
-	for (i=0; i < size; i++)
+	for (i=0; i <= size; i++)
 	{
 		temp = NULL;
 		for (j = i + 1; j < size; j++)

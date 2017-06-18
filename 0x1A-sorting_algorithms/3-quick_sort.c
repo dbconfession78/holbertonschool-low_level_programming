@@ -57,12 +57,7 @@ int partition(int *array, int lo, int hi, size_t size)
 		while (array[j] > pivot);
 		do i++;
 		while (array[i] < pivot);
-		/* j--; */
-		/* for ( ; array[j] > pivot; j--) */
-		/* 	; */
-		/* i++; */
-		/* for ( ; array[i] < pivot; i++) */
-		/* 	; */
+
 		if (i >= j)
 			return (i);
 

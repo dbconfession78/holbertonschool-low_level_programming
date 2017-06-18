@@ -29,7 +29,6 @@ void do_quick_sort(int *array, int lo, int hi, size_t size)
 
 	if (hi <= lo)
 		return;
-
 	p = partition(array, lo, hi, size);
 	do_quick_sort(array, lo, p - 1, size);
 	do_quick_sort(array, p, hi, size);
@@ -46,26 +45,27 @@ void do_quick_sort(int *array, int lo, int hi, size_t size)
 
 int partition(int *array, int lo, int hi, size_t size)
 {
-	int i, j, pivot, temp;
+	int pivot, i, j, tmp;
 
+	pivot = array[hi];
 	i = lo - 1;
 	j = hi + 1;
-	pivot = array[hi];
-	while (1 == 1)
+
+	while (1)
 	{
-		j--;
-		for ( ; array[j] > pivot; j--)
-			;
-		i++;
-		for ( ; array[i] < pivot; i++)
-			;
+
+		do j--;
+		while (array[j] > pivot);
+		do i++;
+		while (array[i] < pivot);
+
+
 		if (i >= j)
 			return (i);
 
-		/* swap and print array */
-		temp = array[i];
+		tmp = array[i];
 		array[i] = array[j];
-		array[j] = temp;
+		array[j] = tmp;
 		print_array(array, size);
 	}
 }

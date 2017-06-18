@@ -8,10 +8,10 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	int lo = 0;
-	int hi = size - 1;
+	if (array == NULL || size < 2)
+		return;
 
-	do_quick_sort(array, lo, hi, size);
+	do_quick_sort(array, 0, size - 1, size);
 }
 
 /**

@@ -26,4 +26,5 @@ void swap(int *a, int *b);
 int partition(int *array, int lo, int hi, size_t size);
 void do_quick_sort(int *array, int lo, int hi, size_t size);
 int array_cmp(int array_1[], int array_2[], size_t size);
+unsigned int count_list(listint_t **list);
 #endif

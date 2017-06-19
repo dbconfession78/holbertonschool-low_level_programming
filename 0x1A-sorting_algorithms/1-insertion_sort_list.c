@@ -6,12 +6,11 @@
  * @list: dll to sort
  * return: void
  */
-
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *temp, *prv, *nxt;
 
-	if (list == NULL || *list == NULL || count_list(list) <= 1)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
 	temp = (*list)->next;
@@ -49,22 +48,4 @@ void insertion_sort_list(listint_t **list)
 			nxt = temp->next; prv = temp->prev;
 		}
 	}
-}
-
-/**
- * count_list - counts the nodes in a dl listint_t list
- * @list: list to count nodes in
- * Return: number of nodes
- */
-unsigned int count_list(listint_t **list)
-{
-	listint_t *counter = *list;
-	unsigned int count = 0;
-
-	while (counter)
-	{
-		count++;
-		counter = counter->next;
-	}
-	return (count);
 }

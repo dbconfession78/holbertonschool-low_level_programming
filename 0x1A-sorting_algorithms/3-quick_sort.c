@@ -48,7 +48,7 @@ void do_quick_sort(int *array, int lo, int hi, size_t size)
 
 int partition(int *array, int lo, int hi, size_t size)
 {
-	int i, j, pivot, temp, x;
+	int i, j, pivot, temp;
 	int *start_array = malloc(sizeof(int) * size);
 
 	for (i = 0; i < (int) size; i++)
@@ -64,27 +64,26 @@ int partition(int *array, int lo, int hi, size_t size)
 			array[i] = array[j];
 			array[j] = temp;
 			j++;
-			for (x = 0; x < (int) size; x++)
-			{
-				if (array[x] != start_array[x])
-				{
-					print_array(array, size);
-					break;
-				}
-			}
+			if (array_cmp(start_array, array, size) != 0)
+				print_array(array, size);
 		}
 	}
+
 	temp = array[j];
 	array[j] = array[hi];
 	array[hi] = temp;
-	for (x = 0; x < (int) size; x++)
-	{
-		if (array[x] != start_array[x])
-		{
-			print_array(array, size);
-			break;
-		}
-	}
+	if (array_cmp(start_array, array, size) != 0)
+		print_array(array, size);
 	free(start_array);
 	return (j);
+}
+
+int array_cmp(int array_1[], int array_2[], size_t size)
+{
+	int i;
+	for (i = 0; i < (int) size; i++)
+		if (array_1[i] != array_2[i])
+			return (1);
+	return (0);
+
 }

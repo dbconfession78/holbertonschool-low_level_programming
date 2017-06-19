@@ -78,9 +78,17 @@ int partition(int *array, int lo, int hi, size_t size)
 	return (j);
 }
 
+/**
+ * array_cmp - compares equality between two arrays fo the same size
+ * @array_1: first array in comparison
+ * @array_2: second array in comparison
+ * @size: size of arrays
+ * Return: 0 if equal, 1 if not equal
+ */
 int array_cmp(int array_1[], int array_2[], size_t size)
 {
 	int i;
+
 	for (i = 0; i < (int) size; i++)
 		if (array_1[i] != array_2[i])
 			return (1);

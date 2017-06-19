@@ -6,7 +6,7 @@
  * @size: size of array
  * return: void
  */
-void quick_sort(int *array, size_t size)
+void quick_sort_hoare(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;

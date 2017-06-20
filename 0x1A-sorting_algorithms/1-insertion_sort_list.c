@@ -10,7 +10,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *temp, *prv, *nxt;
 
-	if (list == NULL || *list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || node_count(list) < 2)
 		return;
 
 	temp = (*list)->next;
@@ -48,4 +48,25 @@ void insertion_sort_list(listint_t **list)
 			nxt = temp->next; prv = temp->prev;
 		}
 	}
+}
+
+/**
+ * node_count - returns the length of a doubly linked  listint_t list
+ * @list: the list to measure
+ * Return: the number of nodes in the list
+ */
+
+int node_count(listint_t **list)
+{
+	listint_t *ptr;
+	int count = 0;
+
+	ptr = *list;
+
+	while (ptr)
+	{
+		ptr = ptr->next;
+		count++;
+	}
+	return (count);
 }

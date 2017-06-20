@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * quick_sort - calls the do_quick_sort functions
+ * quick_sort_hoare - calls the do_quick_sort function
  * @array: array to be sorted
  * @size: size of array
  * return: void

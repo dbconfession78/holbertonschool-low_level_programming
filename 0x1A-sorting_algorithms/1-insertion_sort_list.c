@@ -10,17 +10,19 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *pn, *walk, *nn;
 
+	if (list == NULL || *list == NULL || node_count(list) < 2)
+		return;
+
 	walk = *list;
 	walk = walk->next;
-	pn = walk->prev;
 	nn = walk->next;
-	if (list == NULL || *lsit == NULL || count_nodes(*list) < 2)
-		return;
+	pn = walk->prev;
+
 	while (walk)
 	{
 		if (walk->n < pn->n)
 		{
-			while (pn != NULL && walk->n < pn->n)
+			while (pn && walk->n < pn->n)
 			{
 				if (nn)
 					nn->prev = pn;
@@ -29,17 +31,22 @@ void insertion_sort_list(listint_t **list)
 				pn->next = nn;
 				if (pn->prev != NULL)
 					pn->prev->next = walk;
+				pn->prev = walk;
 
 				nn = pn;
 				pn = walk->prev;
 				if ((*list)->prev != NULL)
-					*list = (*list)->prev;
+					*list = ((*list)->prev);
 				print_list(*list);
+
 			}
 		}
 		walk = walk->next;
-		nn = walk->next;
-		pn = walk->prev;
+		if (walk != NULL)
+		{
+			nn = walk->next;
+			pn = walk->prev;
+		}
 	}
 }
 

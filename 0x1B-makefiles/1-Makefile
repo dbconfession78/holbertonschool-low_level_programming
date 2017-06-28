@@ -2,5 +2,5 @@ CC=gcc
 SRC = holberton.c main.c
 
 all: $(SRC)
-	$(CC) -pedantic -Wall -Werror -Wextra holberton.c main.c -o holberton
+	$(CC) -pedantic -Wall -Werror -Wextra $(SRC) -o holberton
 

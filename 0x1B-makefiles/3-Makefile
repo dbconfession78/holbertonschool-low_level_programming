@@ -1,0 +1,28 @@
+# 2-Makefile
+
+CC=gcc
+SRC=holberton.c main.c
+NAME=holberton
+RM=rm -f
+OBJ=$(SRC:%.c=%.o) # replaces all instances of '.c' with '.o'
+
+# prevents 'make' from doing something with files named 'clean' 'oclean' and 'fclean'
+.PHONY: clean oclean fclean
+
+all: $(OBJ) # only applies rule if source files have changed
+	$(CC) -pedantic -Wall -Werror -Wextra $(OBJ) -o $(NAME)
+
+# deletes EMACS temp files and executable file
+clean:
+	$(RM) *~ $(NAME)
+
+#deletes object files
+oclean:
+	$(RM) $(OBJ)
+
+# deletes EMACS temp files, object files and the executable file
+fclean:
+	$(RM) $(OBJ) *~ $(NAME)
+
+#forces recompilation of all source files
+re: oclean all

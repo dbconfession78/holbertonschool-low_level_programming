@@ -18,7 +18,6 @@ The focus of this project is to learn:
 
 ## Helpful Links
 * Makefile: https://www.google.com/search?q=makefile
-* https://en.wikipedia.org/wiki/Hash_function
 
 ## File Descriptions
 - `0-Makefile`: uses the 'all' rule to compile relevant files and build executable

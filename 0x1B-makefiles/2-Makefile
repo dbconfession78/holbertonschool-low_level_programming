@@ -1,11 +1,11 @@
 # 2-Makefile
-# * copies SRC into OBJ, but replaces all  instances of '.c' with '.o'
-# ** only applies rule if source files have changed
+# 1 copies SRC into OBJ, but replaces all  instances of '.c' with '.o'
+# 2 only applies rule if source files have changed
 
 CC=gcc
 SRC=holberton.c main.c
-OBJ=$(SRC:.c=.o) # *
+OBJ=$(SRC:.c=.o) # 1
 NAME=holberton
 
-all: $(OBJ) # **
+all: $(OBJ) # 2
 	$(CC) -pedantic -Wall -Werror -Wextra $(OBJ) -o $(NAME)

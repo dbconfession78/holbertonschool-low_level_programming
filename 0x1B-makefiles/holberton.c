@@ -1,7 +1,7 @@
 #include "m.h"
 
 /**
- * holberton - prints an ASCII image of the holberton logo
+ * print_holberton - prints an ASCII image of the holberton logo
  * Return: void
  */
 void print_holberton(void)

@@ -1,2 +1,4 @@
+# 0-Makefile
+
 all: main.c holberton.c
 	gcc -pedantic -Wall -Werror -Wextra main.c holberton.c -o holberton

@@ -11,7 +11,7 @@ CFLAGS= -pedantic -Wall -Werror -Wextra
 .PHONY: clean oclean fclean
 
 all: $(OBJ) # only applies rule if source files have changed
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 # deletes EMACS temp files and executable file
 clean:

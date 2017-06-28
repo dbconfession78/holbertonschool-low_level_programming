@@ -1,4 +1,4 @@
-# 2-Makefile
+# 4-Makefile
 
 CC=gcc
 SRC=holberton.c main.c

@@ -1,10 +1,10 @@
-# 2-Makefile
+# 3-Makefile
 
 CC=gcc
 SRC=holberton.c main.c
+OBJ=$(SRC:%.c=%.o) # replaces all instances of '.c' with '.o'
 NAME=holberton
 RM=rm -f
-OBJ=$(SRC:%.c=%.o) # replaces all instances of '.c' with '.o'
 
 # prevents 'make' from doing something with files named 'clean' 'oclean' and 'fclean'
 .PHONY: clean oclean fclean

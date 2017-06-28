@@ -1,4 +1,6 @@
 # 2-Makefile
+# * copies SRC into OBJ, but replaces all  instances of '.c' with '.o'
+# ** only applies rule if source files have changed
 
 CC=gcc
 SRC=holberton.c main.c

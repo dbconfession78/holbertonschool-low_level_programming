@@ -14,10 +14,10 @@ The focus of this project is to learn:
 * gcc standard C90
 
 ## New commands / functions used:
-``TODO``,
+`make` Makefile`
 
 ## Helpful Links
-* https://www.youtube.com/watch?v=MfhjkfocRR0
+* Makefile: https://www.google.com/search?q=makefile
 * https://en.wikipedia.org/wiki/Hash_function
 
 ## File Descriptions

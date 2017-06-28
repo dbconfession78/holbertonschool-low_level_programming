@@ -7,6 +7,3 @@ NAME=holberton
 
 all: $(OBJ) # **
 	$(CC) -pedantic -Wall -Werror -Wextra $(OBJ) -o $(NAME)
-
-# * copies SRC into OBJ, but replaces all  instances of '.c' with '.o'
-# ** only applies rule if source files have changed

@@ -9,20 +9,20 @@ NAME=holberton
 CFLAGS= -pedantic -Wall -Werror -Wextra
 
 # prevents 'make' from doing something with files named 'clean' 'oclean' and 'fclean'
-.PHONY: all clean oclean fclean re $(NAME)
+.PHONY: all clean oclean fclean re
 
 # only applies rule if source files have changed
 # will not compile if m.h is missing
-$(NAME): m.h $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+all: m.h $(OBJ)
+	 $(CC) $(OBJ) -o $(NAME)
 
 # deletes EMACS temp files and executable file
 clean:
-	$(RM) *~ $(NAME)
+		$(RM) *~ $(NAME)
 
 #deletes object files
 oclean:
-	$(RM) $(OBJ)
+		$(RM) $(OBJ)
 
 # deletes EMACS temp files, object files and the executable file
 fclean: clean oclean

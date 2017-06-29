@@ -4,7 +4,7 @@
 
 CC=gcc
 SRC=holberton.c main.c
-OBJ=$(SRC:%.c=%.o) # replaces all instances of '.c' with '.o'
+OBJ=$(SRC:.c=.o) # replaces all instances of '.c' with '.o'
 NAME=holberton
 CFLAGS= -pedantic -Wall -Werror -Wextra
 

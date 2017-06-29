@@ -1,31 +1,22 @@
-# 100-Makefile
-# why does $(RM work even if RM isn't declared?
-# how can I tell if flags are working even if I don't uae $(CFLAGS)
+# Basic Make file, but with flags
 
 CC=gcc
 SRC=holberton.c main.c
-OBJ=$(SRC:%.c=%.o) # replaces all instances of '.c' with '.o'
+OBJ=$(SRC:.c=.o)
 NAME=holberton
-CFLAGS= -pedantic -Wall -Werror -Wextra
+CFLAGS=-Wall -Werror -Wextra -pedantic
 
-# prevents 'make' from doing something with files named 'clean' 'oclean' and 'fclean'
-.PHONY: all clean oclean fclean re
+.PHONY: clean oclean fclean re all $(NAME)
+all: $(SRC) $(NAME)
 
-# only applies rule if source files have changed
-# will not compile if m.h is missing
-all: m.h $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+$(NAME): m.h $(OBJ)
+	$(CC) $(OBJ) -o $@
 
-# deletes EMACS temp files and executable file
-clean:
-	$(RM) *~ $(NAME)
+fclean: oclean clean 
 
-#deletes object files
 oclean:
 	$(RM) $(OBJ)
+clean:
+	$(RM) *~ $(NAME) 
 
-# deletes EMACS temp files, object files and the executable file
-fclean: clean oclean
-
-#forces recompilation of all source files
 re: oclean all

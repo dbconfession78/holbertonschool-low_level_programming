@@ -1,6 +1,4 @@
 # 100-Makefile
-# why does $(RM work even if RM isn't declared?
-# how can I tell if flags are working even if I don't uae $(CFLAGS)
 
 CC=gcc
 SRC=holberton.c main.c

@@ -28,7 +28,10 @@ void selection_sort(int *array, size_t size)
 				if (temp && array[j] < *temp)
 					temp = &array[j];
 				else if (temp == NULL)
+				{
 					temp = &array[j];
+					printf("array[j]: %d\n", array[j]); getchar();
+				}
 			}
 		}
 		if (temp)

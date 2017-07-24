@@ -2,3 +2,8 @@ sandbox
 *~
 *#*
 *main.c
+a.out
+*/lib/
+test*
+*/betty/
+/betty/

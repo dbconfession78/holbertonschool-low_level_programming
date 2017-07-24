@@ -1,14 +1,37 @@
-# 0x1C.c
+#  Holberton School - 0x1C. C - Binary trees
+Description
 
-Functions to print binary trees in a pretty way
+The focus of this project is to learn:
+* what a binary tree is.
+* what the difference between a binary tree and a Binary Search Tree is.
+* what the possible gain in terms of time complexity compared to linked lists is.
+* what the depth, the height, the size of a binary tree are.
+* what the different traversal methods to go through a binary tree are.
+* what a complete, a full, a perfect abd a balanced binary tree are.
 
-```
-                           .----------------------(006)-------.
-                      .--(001)-------.                   .--(008)--.
-                 .--(-02)       .--(003)-------.       (007)     (009)
-       .-------(-06)          (002)       .--(005)
-  .--(-08)--.                           (004)
-(-09)     (-07)
-```
+## Environment
+* Ubuntu 14.04 LTS
+* gcc standard C90
 
-[Original code](Original code from http://stackoverflow.com/a/13755911/5184480)
+## New commands / functions used:
+TODO
+
+## Helpful Links
+- <a href="https://en.wikipedia.org/wiki/Binary_tree">Binary Tree</a>
+- <a href="https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm">Data Structure and Algorithms - Tree</a>
+- <a href="https://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm">Tree Traversal</a>
+- <a href="https://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a>
+- <a href="https://www.youtube.com/watch?v=H5JubkIy_p8">YouTube - Data Structures:  Binary Tree</a>
+
+## File Descriptions
+TODO
+
+## Author
+Stuart Kuredjian
+
+twitter: @stueygk
+
+linkdin: https://www.linkedin.com/in/stuart-kuredjian-8100a273/
+
+## License
+Public Domain, no copyright protection

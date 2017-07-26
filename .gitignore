@@ -3,4 +3,7 @@ sandbox
 *#*
 *main.c
 a.out
-test*.c
+*/lib/
+test*
+*/betty/
+/betty/

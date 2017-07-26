@@ -23,7 +23,7 @@ size_t binary_tree_leaves(const binary_tree_t *tree)
 	size_t leaves = 0;
 	size_t is_leaf = 0;
 
-	if (tree == NUll)
+	if (tree == NULL)
 		return (0);
 
 	if (tree)

@@ -19,11 +19,13 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 		if (tree->left)
 		{
 			func(tree->left->n);
+			binary_tree_levelorder(tree->left, *func);
 			if (sibling)
+			{
 				func(sibling->n);
+				binary_tree_levelorder(sibling, *func);
+			}
 		}
-		binary_tree_levelorder(tree->left, *func);
-		binary_tree_levelorder(sibling, *func);
 	}
 }
 

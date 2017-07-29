@@ -43,7 +43,7 @@ void level_traversal(const binary_tree_t *tree, void (*func)(int), int level)
 		if (tree->right)
 			level_traversal(tree->right, func, level - 1);
 	}
-	return;
+
 }
 
 /**

@@ -13,13 +13,13 @@ The focus of this project is to learn:
 * <a href="http://btechsmartclass.com/DS/U1_T3.html">Space complexity (2)</a>
 
 ## File Descriptions
-`0-linear.c`: searches for a value in an array of integers using the Linear search algorithm
-`1-binary.c`: searches for a value in a sorted array of integers using the Binary search algorithm
-`2-O`: the time complexity of a basic linear search algorithm in an array of size n.
-`3-O`: the space complexity of a basic linear search algorithm in an array of size n.
-`4-O`: the time complexity of a basic binary search algorithm of an array of size n.
-`5-O`: the space complexity of a basic binary search algorithm of an array of size n.
-`6-O`: the space complexity of the algorithm in project task #6
+- `0-linear.c`: searches for a value in an array of integers using the Linear search algorithm
+- `1-binary.c`: searches for a value in a sorted array of integers using the Binary search algorithm
+- `2-O`: the time complexity of a basic linear search algorithm in an array of size n.
+- `3-O`: the space complexity of a basic linear search algorithm in an array of size n.
+- `4-O`: the time complexity of a basic binary search algorithm of an array of size n.
+- `5-O`: the space complexity of a basic binary search algorithm of an array of size n.
+- `6-O`: the space complexity of the algorithm in project task #6
 
 
 ## Author

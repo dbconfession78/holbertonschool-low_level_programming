@@ -9,7 +9,7 @@ The focus of this project is to learn:
 
 ## Helpful Links
 * <a hef="https://en.wikipedia.org/wiki/Search_algorithm">Search algorithm</a>
-* <a href="http://www.geeksforgeeks.org/g-fact-86/">Space complexity (1)</>
+* <a href="http://www.geeksforgeeks.org/g-fact-86">Space complexity (1)</a>
 * <a href="http://btechsmartclass.com/DS/U1_T3.html">Space complexity (2)</a>
 
 ## File Descriptions

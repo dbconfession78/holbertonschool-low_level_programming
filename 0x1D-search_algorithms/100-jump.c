@@ -27,7 +27,7 @@ int jump_search(int *array, size_t size, int value)
 		end = end + s_root;
 		if (end > (size - 1))
 		{
-			end = (size - 1) + s_root;
+			/* end = (size - 1) + s_root; */
 			break;
 		}
 	}
